@@ -8,7 +8,7 @@ description: IR mode at the input to amp3
 background:
   enabled: true
   method: constant
-  constant_level: 20.0
+  constant_level: 90.0
 
 metadata:
   location: "Room 148"
@@ -16,7 +16,7 @@ metadata:
   spatial_calibration: 2.44e-05
 
 roi:
-  x_max: 600
+  x_max: 700
   x_min: 50
   y_max: 700
-  y_min: 150
+  y_min: 100

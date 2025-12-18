@@ -8,9 +8,24 @@ description: IR mode at the input to amp2
 background:
   enabled: true
   method: constant
-  constant_level: 20.0
+  constant_level: 225.0
 
 metadata:
   location: "Room 148"
   notes: "none"
   spatial_calibration: 2.44e-05
+
+roi:
+  x_min: 100
+  x_max: 450
+  y_min: 100
+  y_max: 450
+
+
+  # Thresholding configuration
+thresholding:
+  enabled: true
+  method: "constant"  # Use percentage of max value
+  value: 0.0               # 10% of maximum pixel value
+  mode: "to_zero"            # Binary thresholding
+  invert: false             # Don't invert

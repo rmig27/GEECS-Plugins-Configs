@@ -8,7 +8,7 @@ description: IR mode at the input to amp3
 background:
   enabled: true
   method: constant
-  constant_level: 10.0
+  constant_level: 90.0
 
 metadata:
   location: "Room 148"

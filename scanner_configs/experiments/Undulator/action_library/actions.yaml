@@ -38,7 +38,7 @@ actions:
       value: 0
       variable: InternalShutterA
     - action: wait
-      wait: 1.0
+      wait: 2.0
     - action: set
       device: U_GaiaSVEReader
       value: 0
@@ -50,7 +50,7 @@ actions:
       expected_value: 0
       variable: InternalShutterA
     - action: wait
-      wait: 1.0
+      wait: 2.0
     - action: get
       device: U_GaiaSVEReader
       expected_value: 0
@@ -104,9 +104,9 @@ actions:
     - action: execute
       action_name: zero_chicane_magnets
     - action: execute
-      action_name: zero_magspec_currents
-    - action: execute
       action_name: closeout_pmq_REMOVE
+    - action: execute
+      action_name: zero_magspec_currents
   insert_gaia_stops:
     steps:
     - action: set
@@ -138,7 +138,7 @@ actions:
       value: 1
       variable: InternalShutterA
     - action: wait
-      wait: 1.0
+      wait: 2.0
     - action: set
       device: U_GaiaSVEReader
       value: 1
@@ -150,7 +150,7 @@ actions:
       expected_value: 1
       variable: InternalShutterA
     - action: wait
-      wait: 1.0
+      wait: 2.0
     - action: get
       device: U_GaiaSVEReader
       expected_value: 1
@@ -299,14 +299,14 @@ actions:
       variable: Current_Limit.Ch4
       wait_for_execution: true
     - action: set
-      device: U_ACaveMagSpecPS
-      value: 0
-      variable: Current
-      wait_for_execution: true
-    - action: set
       device: U_BCaveMagSpecPS
       value: 0
       variable: Current_Limit.Ch1
+      wait_for_execution: true
+    - action: set
+      device: U_ACaveMagSpecPS
+      value: 0
+      variable: Current
       wait_for_execution: true
   zero_pressure_voltage:
     steps:

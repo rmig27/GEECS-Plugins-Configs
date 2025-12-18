@@ -1,0 +1,7 @@
+Devices:
+- Base_Monitoring_Devices
+- DonDDiagnostics
+Info: pressure 120psi, jetz=2.2mm, jetx=5.24, jety=-7, jet blade = -17.48, gaia timing
+  =580us, compressor =42100
+Num Shots: 1800
+Scan Mode: No Scan

@@ -1,0 +1,18 @@
+Devices:
+  UC_DiagnosticsPhosphor:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list: []
+  UC_DonDSampleArea:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list: []
+  UC_DonD_DipoleExit:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list: []
+  U_BCaveICT:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list:
+    - Python Results.ChA

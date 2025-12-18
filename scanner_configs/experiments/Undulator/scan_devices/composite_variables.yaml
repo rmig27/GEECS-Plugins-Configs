@@ -44,6 +44,15 @@ composite_variables:
       relation: composite_var * -1.5
       variable: Position.Axis 1
     mode: relative
+  JetZ_with_probe:
+    components:
+    - device: U_ESP_JetXYZ
+      relation: composite_var
+      variable: Position.Axis 3
+    - device: U_ProbeCamStage
+      relation: 0.0 - (composite_var-5)*2.5
+      variable: Position
+    mode: absolute
   Laser_angle_offset_x:
     components:
     - device: U_ESP302_02
@@ -61,13 +70,4 @@ composite_variables:
     - device: U_ChicaneOuter
       relation: -sqrt(100 ** 2 * composite_var / 560968.636)
       variable: Current
-    mode: absolute
-  JetZ_with_probe:
-    components:
-    - device: U_ESP_JetXYZ
-      relation: composite_var
-      variable: Position.Axis 3
-    - device: U_ProbeCamStage
-      relation: 9.5 - (composite_var-5)*2.5
-      variable: Position
     mode: absolute
