@@ -1,6 +1,6 @@
 groups:
   baseline:
-    - Amp2input
+    - Amp2Input
     - Amp3input
     - Amp4input
     - ExpanderIn1
