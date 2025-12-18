@@ -4,7 +4,7 @@ device_name: U_BCaveICT
 priority: 49
 analysis_mode: per_shot          # quotes optional
 file_tail: ".tdms"
-flag_save_images: true
+flag_save_data: true
 renderer_kwargs:
   colormap_mode: diverging
   cmap: RdBu_r
