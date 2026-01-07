@@ -8,7 +8,7 @@ description: IR mode at the input to amp2
 background:
   enabled: true
   method: constant
-  constant_level: 80.0
+  constant_level: 100.0
 
 metadata:
   location: "Room 148"
@@ -25,3 +25,15 @@ circular_mask:
   enabled: true
   center: [205,260]
   radius: 150
+
+filtering:
+  gaussian_sigma: null
+  median_kernel_size: 3
+
+  # Thresholding configuration
+thresholding:
+  enabled: true
+  method: "constant"  # Use percentage of max value
+  value: 0.0               # 10% of maximum pixel value
+  mode: "to_zero"            # Binary thresholding
+  invert: false             # Don't invert

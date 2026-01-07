@@ -20,3 +20,11 @@ roi:
   x_min: 50
   y_max: 700
   y_min: 100
+
+  # Thresholding configuration
+thresholding:
+  enabled: true
+  method: "constant"  # Use percentage of max value
+  value: 0.0               # 10% of maximum pixel value
+  mode: "to_zero"            # Binary thresholding
+  invert: false             # Don't invert
