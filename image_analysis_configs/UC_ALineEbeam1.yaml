@@ -20,7 +20,7 @@ description: A-Line electron beam camera 1 for beam profiling
 background:
   enabled: true
   method: constant
-  constant_level: 10.0
+  constant_level: 60.0
 
 crosshair_masking:
   crosshairs: []
@@ -42,7 +42,7 @@ roi:
   y_min: 500
 
 thresholding:
-  enabled: false
+  enabled: true
   invert: false
   method: constant
   mode: to_zero
