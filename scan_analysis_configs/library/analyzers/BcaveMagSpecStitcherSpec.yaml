@@ -1,0 +1,12 @@
+id: BcaveMagSpecStitcherSpec
+type: array1d
+device_name: U_BCaveMagSpec-interpSpec
+priority: 1
+analysis_mode: per_shot          # quotes optional
+flag_save_images: false
+image_analyzer:
+  analyzer_class: image_analysis.offline_analyzers.standard_1d_analyzer.Standard1DAnalyzer
+  kwargs:
+    line_config_name : "U_BCaveMagSpec-interpSpec"
+kwargs: {file_tail: ".txt"}
+is_active: true
