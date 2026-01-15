@@ -2,7 +2,8 @@ groups:
   baseline:
     - Amp2Input
 #    - Amp3Input
-#    - Amp4Input
+    - Amp4Input
+    - Amp4Output
 #    - ExpanderIn1
 #    - ExpanderIn1_Pulsed
-#    - GaiaMode
+    - GaiaMode

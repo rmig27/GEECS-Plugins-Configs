@@ -1,0 +1,13 @@
+Devices:
+  HTT-D-AMP2_Depletion:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list: []
+  HTT-D-AMP3_Depletion:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list: []
+  HTT-D-AMP4-Depletion:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list: []
