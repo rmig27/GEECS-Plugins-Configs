@@ -1,0 +1,34 @@
+# Configuration for UC_Amp4_IR_input camera
+
+name: UC_TopView
+bit_depth: 16
+description: IR mode at the input to amp3
+
+# Camera identification and properties
+background:
+  enabled: true
+  method: constant
+  constant_level: 50.0
+
+metadata:
+  location: "Room 148"
+  notes: "none"
+  spatial_calibration: 2.44e-05
+
+filtering:
+  gaussian_sigma: null
+  median_kernel_size: 3
+
+roi:
+  x_max: 300
+  x_min: 100
+  y_max: 600
+  y_min: 400
+
+  # Thresholding configuration
+thresholding:
+  enabled: true
+  method: "constant"  # Use percentage of max value
+  value: 0.0               # 10% of maximum pixel value
+  mode: "to_zero"            # Binary thresholding
+  invert: false             # Don't invert
