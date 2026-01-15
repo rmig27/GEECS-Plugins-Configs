@@ -1,0 +1,10 @@
+Devices:
+- AmplifierCams_with_Amp4out
+- DepletionCams
+Info: noscan amp4 energy stability
+Scan Mode: 1D Scan
+Shot per Step: 5
+Start: 0.00066354
+Step Size: 1.0e-08
+Stop: 0.00066374
+Variable: gaia_Qswitch_time
