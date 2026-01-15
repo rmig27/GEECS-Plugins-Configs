@@ -29,6 +29,6 @@ filtering:
 
 roi:
   x_max: 350
-  x_min: 250
-  y_max: 215
-  y_min: 115
+  x_min: 200
+  y_max: 250
+  y_min: 100

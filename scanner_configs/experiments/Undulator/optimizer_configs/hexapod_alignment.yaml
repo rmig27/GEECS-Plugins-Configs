@@ -18,10 +18,10 @@
 vocs:
   variables:
     # Example: optimize triplet magnet currents
-    U_Hexapod:ypos: [1, 14]
-    U_Hexapod:zpos: [-1, 1.5]
-    U_Hexapod:vangle: [-.5, .5]
-    U_Hexapod:wangle: [-1, .0]
+    U_Hexapod:ypos: [18, 19.5]
+    U_Hexapod:zpos: [-.5, .7]
+    U_Hexapod:vangle: [-.25, .25]
+    U_Hexapod:wangle: [-.5, .0]
 
   objectives:
     f: MINIMIZE  # Minimize the objective function
@@ -41,7 +41,7 @@ evaluator:
 
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
-      # Single device example: UC_ALineEBeam3 camera
+      # Single device example: UC_TC_Output camera
       - device_name: UC_TC_Output
         analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
         file_tail: .png  # File extension for data files
