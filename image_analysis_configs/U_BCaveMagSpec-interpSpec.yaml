@@ -24,6 +24,10 @@ filtering:
   sigma: 2.0                 # Standard deviation for Gaussian filter
   kernel_size: 51             # Kernel size for median filter (must be odd)
 
+# Unit conversion: seconds → nanoseconds, volts → millivolts
+x_units: "MeV"
+x_scale_factor: 1e3  # GeV->MeV conversion factor from raw data
+
 # Thresholding configuration
 thresholding:
   method: "absolute"       # Options: "none", "absolute", "percentile"
@@ -31,13 +35,13 @@ thresholding:
   clip_below: true           # Clip values below (true) or above (false) threshold
 
 roi:
-  x_min: 0.6    # 0 microseconds
-  x_max: 0.150   # 10 microseconds
+  x_min: 60    # 60 MeV
+  x_max: 150   # 150 MeV
 
 
-# Pipeline configuration (order of processing steps)
-pipeline:
-  steps:
-    - "background"
-    - "roi"
-    - "thresholding"
+## Pipeline configuration (order of processing steps)
+#pipeline:
+#  steps:
+#    - "background"
+#    - "roi"
+#    - "thresholding"
