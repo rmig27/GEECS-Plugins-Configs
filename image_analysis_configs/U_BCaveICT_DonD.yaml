@@ -1,7 +1,7 @@
 # BCave ICT (Integrated Current Transformer) Configuration
 # Configuration for measuring charge from oscilloscope traces using ICT1DAnalyzer
 
-name: "U_BCaveICT"
+name: "U_BCaveICT_DonD"
 description: "BCave ICT charge measurement from oscilloscope traces"
 data_format: "volts (V) vs time (s)"
 
@@ -38,7 +38,7 @@ ict_analysis:
     critical_frequency: 0.125
     filter_type: "low"
   calibration:
-    calibration_factor: 0.2
+    calibration_factor: 0.1
     detector_type: "bcave"
   extract_dt_from_metadata: true
   dt_override: null
