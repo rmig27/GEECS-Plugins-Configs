@@ -2,7 +2,7 @@
 
 name: UC_DonDSampleArea
 bit_depth: 16
-description: image of e-beam in diagnostics phosphor
+description: Target area image of ebeam profile imaged on LANEX
 
 # Camera identification and properties
 background:
@@ -10,23 +10,29 @@ background:
   method: from_file
   file_path: "{scan_dir}/computed_background.npy"
   constant_level: 50.0  #fallback to this value if file not found
-  dynamic_computation:
-    enabled: true
-    method: percentile_dataset
-    percentile: 5.0
-    auto_save_path: "{scan_dir}/computed_background.npy"
+#  dynamic_computation:
+#    enabled: true
+#    method: percentile_dataset
+#    percentile: 5.0
+#    auto_save_path: "{scan_dir}/computed_background.npy"
   additional_constant: 50
 
 metadata:
   location: "B-cave"
   notes: "none"
-  spatial_calibration: 2.44e-05
+  spatial_calibration: 35e-6
+
+roi:
+  x_min: 300
+  x_max: 900
+  y_min: 100
+  y_max: 700
 
 # Thresholding configuration - NEW FEATURE
 thresholding:
   enabled: true
   method: "constant"  # Use percentage of max value
-  value: 0.0               # 10% of maximum pixel value
+  value: 100            # 10% of maximum pixel value
   mode: "to_zero"            # Binary thresholding
   invert: false             # Don't invert
 
@@ -34,8 +40,7 @@ filtering:
   gaussian_sigma: null
   median_kernel_size: 3
 
-roi:
-  x_min: 300
-  x_max: 900
-  y_min: 100
-  y_max: 700
+normalization:
+  enabled: true
+  method: "image_total"
+
