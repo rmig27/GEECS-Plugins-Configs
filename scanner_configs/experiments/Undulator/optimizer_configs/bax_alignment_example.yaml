@@ -1,9 +1,9 @@
 # Example optimization configuration using MultiDeviceScanEvaluator
 vocs:
   variables:
-    U_S1H:Current: [-1.5, 1.5]   # control
+    U_S1V:Current: [-4, 4]   # control
 #    U_S1V:Current: [-1.5, 1.5]5
-    U_EMQTripletBipolar:Current_Limit.Ch1: [ .5, 2 ]
+    U_EMQTripletBipolar:Current_Limit.Ch1: [ 1.2, 1.7 ]
   objectives: {}  # EMPTY - BAX doesn't use objectives!
   observables:
     - x_CoM
@@ -33,17 +33,17 @@ evaluator:
           kwargs: {"camera_config_name":"UC_ALineEBeam3"}
 
         # Analysis mode (per_bin recommended for optimization)
-        analysis_mode: per_bin
+        analysis_mode: per_shot
 
 generator:
   name: multipoint_bax_alignment_l2
 
 xopt_config_overrides:
   multipoint_bax_alignment_l2:
-    control_names: ["U_S1H:Current"]
+    control_names: ["U_S1V:Current"]
     measurement_name: "U_EMQTripletBipolar:Current_Limit.Ch1"
     observable_names: ["x_CoM"]
-    probe_nominal: 1.25
+    probe_nominal: 1.5
     probe_grid_absolute: [-0.25, 0.0, +0.25]
     n_control_mesh: 21
     mesh_measurement: true

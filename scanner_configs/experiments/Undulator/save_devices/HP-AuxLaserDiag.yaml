@@ -1,13 +1,9 @@
 Devices:
   U_148Spectrometer:
-    add_all_variables: false
     save_nonscalar_data: true
     synchronous: true
-    variable_list:
-    - exposure
+    variable_list: []
   U_FROG_Grenouille:
-    add_all_variables: false
     save_nonscalar_data: true
     synchronous: true
-    variable_list:
-    - timeout
+    variable_list: []

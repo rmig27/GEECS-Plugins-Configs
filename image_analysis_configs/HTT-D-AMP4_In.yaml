@@ -2,7 +2,7 @@
 
 name: HTT-D-AMP4_In
 bit_depth: 16
-description: IR mode at the input to amp3
+description: Image analyzer to calcuate basic statistics of the IR laser beam profile at the input to amp4.
 
 # Camera identification and properties
 background:

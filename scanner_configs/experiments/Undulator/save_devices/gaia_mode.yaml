@@ -1,5 +1,0 @@
-Devices:
-  UC_GaiaMode:
-    save_nonscalar_data: true
-    synchronous: true
-    variable_list: []

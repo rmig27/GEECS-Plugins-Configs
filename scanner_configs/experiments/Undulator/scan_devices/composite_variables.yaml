@@ -44,6 +44,33 @@ composite_variables:
       relation: composite_var * -1.5
       variable: Position.Axis 1
     mode: relative
+  HexY_S1H_relative:
+    components:
+    - device: U_Hexapod
+      relation: composite_var
+      variable: ypos
+    - device: U_S1H
+      relation: (composite_var)*8
+      variable: Current
+    mode: relative
+  HexZ_S1V:
+    components:
+    - device: U_Hexapod
+      relation: composite_var
+      variable: zpos
+    - device: U_S1V
+      relation: -(composite_var + 0.2411) * 9
+      variable: Current
+    mode: absolute
+  HexZ_S1V_relative:
+    components:
+    - device: U_Hexapod
+      relation: composite_var
+      variable: zpos
+    - device: U_S1V
+      relation: -(composite_var)*9.0
+      variable: Current
+    mode: relative
   JetZ_with_probe:
     components:
     - device: U_ESP_JetXYZ

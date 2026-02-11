@@ -1,0 +1,13 @@
+Devices:
+- BCaveMagSpec-HiRes
+- BCaveMagSpec
+- HP-AuxLaserDiag
+- HP-LaserCams
+- U_BCaveICT
+Info: hex_z s1V scan
+Scan Mode: 1D Scan
+Shot per Step: 20
+Start: -0.64
+Step Size: 0.1
+Stop: 0.24
+Variable: HexZ_S1V

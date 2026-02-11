@@ -14,6 +14,10 @@ data_loading:
 processing_dtype: "float64"  # Use high precision during processing
 storage_dtype: "float32"     # Save with lower precision to reduce file size
 
+ict_options:
+  butterworth_order: 2
+
+
 ## Background subtraction configuration
 #background:
 #  method: "constant"         # Options: "none", "constant", "from_file"

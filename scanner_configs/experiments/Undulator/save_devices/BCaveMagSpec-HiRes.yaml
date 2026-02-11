@@ -1,5 +1,6 @@
 Devices:
   UC_HiResMagCam:
+    add_all_variables: false
     save_nonscalar_data: true
     scan_setup:
       Analysis:
@@ -35,5 +36,4 @@ Devices:
     save_nonscalar_data: false
     synchronous: false
     variable_list:
-    - Field
-    - Rawfield
+    - Current_Limit.Ch1

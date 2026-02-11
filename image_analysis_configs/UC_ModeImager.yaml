@@ -8,7 +8,7 @@ description: imager of main laser driver
 background:
   enabled: true
   method: constant
-  constant_level: 30.0
+  constant_level: 50.0
 
 metadata:
   location: "B-cave"
@@ -28,7 +28,7 @@ filtering:
   median_kernel_size: 3
 
 roi:
-  x_max: 700
-  x_min: 400
-  y_max: 525
-  y_min: 275
+  x_min: 500
+  x_max: 800
+  y_min: 600
+  y_max: 900

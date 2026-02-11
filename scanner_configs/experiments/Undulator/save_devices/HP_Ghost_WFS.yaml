@@ -9,3 +9,15 @@ Devices:
     - RadiusOfCurvature
     - Zernike2
     - Zernike3
+    - Zernike1
+    - Zernike4
+    - Zernike5
+    - Zernike6
+    - Zernike7
+    - Zernike8
+    - Zernike9
+    - Zernike10
+    - PupilXCent
+    - PupilXDiam
+    - PupilYCent
+    - PupilYDiam
