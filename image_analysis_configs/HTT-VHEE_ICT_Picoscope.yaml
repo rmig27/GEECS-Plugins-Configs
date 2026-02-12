@@ -1,8 +1,8 @@
-# BCave ICT (Integrated Current Transformer) Configuration
+# VHEE ICT 
 # Configuration for measuring charge from oscilloscope traces using ICT1DAnalyzer
 
-name: "U_BCaveICT"
-description: "BCave ICT charge measurement from oscilloscope traces"
+name: "HTT-VHEE_ICT_Picoscope"
+description: "VHEEICT charge measurement from oscilloscope traces"
 data_format: "volts (V) vs time (s)"
 
 # Data loading configuration
@@ -34,6 +34,5 @@ pipeline:
 ict_options:
   crit_freq: 0.125
   order: 1
-  dt: 4e-9 
-  calib: 0.2
-
+  dt: 2e-9 #s
+  calib: 0.2 #C/Vs
