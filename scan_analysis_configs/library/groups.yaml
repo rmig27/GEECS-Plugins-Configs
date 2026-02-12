@@ -9,3 +9,5 @@ groups:
     - ExpanderIn1_Pulsed
     - GaiaMode
     - BcaveMagSpecStitcherSpec
+  VHEE:
+    - VHEE_ICT

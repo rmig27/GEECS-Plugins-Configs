@@ -1,0 +1,6 @@
+experiment: HTT
+description: Standard analysis using library/groups
+version: "1.0"
+include:
+  - group: VHEE
+    priority_offset: 0
