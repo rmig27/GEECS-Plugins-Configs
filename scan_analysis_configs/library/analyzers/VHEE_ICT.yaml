@@ -12,5 +12,5 @@ image_analyzer:
   analyzer_class: image_analysis.offline_analyzers.ict_1d_analyzer.ICT1DAnalyzer
   kwargs:
     line_config_name: "HTT-VHEE_ICT_Picoscope"
-kwargs: {}
+kwargs: {file_tail: ".tdms"}
 is_active: true

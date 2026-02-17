@@ -41,6 +41,7 @@ filtering:
   median_kernel_size: 3
 
 normalization:
-  enabled: true
+  enabled: false
   method:  "distribute_value"
+  constant_value: 1
 
