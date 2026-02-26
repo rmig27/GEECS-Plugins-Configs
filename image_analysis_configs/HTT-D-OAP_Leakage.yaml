@@ -5,26 +5,32 @@ bit_depth: 16
 description: IR leakage through the OAP, used for qualitative transmission monitoring
 
 # Camera identification and properties
+metadata:
+  location: "B_Cave"
+  notes: "none"
+  spatial_calibration: 251.383 e-6
+
+# background:
+#   enabled: true
+#   method: "constant"
+#   constant_level: 100
 background:
   enabled: true
-  method: constant
-  constant_level: 60.0
+  method: from_file
+  file_path: "{scan_dir}/computed_background.npy"
+  constant_level: 1  #fallback to this value if file not found
+  dynamic_computation:
+    enabled: true
+    method: percentile_dataset
+    percentile: 20.0
+    auto_save_path: "{scan_dir}/computed_background.npy"
+  additional_constant: 2
 
-metadata:
-  location: "Room 148"
-  notes: "none"
-  spatial_calibration: 2.44e-05
-
-#roi:
-#  x_max: 500
-#  x_min: 1
-#  y_max: 500
-#  y_min: 1
-
-circular_mask:
-  enabled: true
-  center: [600,500]
-  radius: 300
+roi:
+ x_max: 1000
+ x_min: 575
+ y_max: 820
+ y_min: 430
 
 filtering:
   gaussian_sigma: null
@@ -34,6 +40,9 @@ filtering:
 thresholding:
   enabled: true
   method: "constant"  # Use percentage of max value
-  value: 0.0               # 10% of maximum pixel value
+  value: 100             # 10% of maximum pixel value
   mode: "to_zero"            # Binary thresholding
   invert: false             # Don't invert
+
+pipeline:
+  steps: [roi, background, filtering, thresholding]
