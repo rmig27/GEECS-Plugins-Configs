@@ -2,7 +2,7 @@
 # Configuration for measuring charge from oscilloscope traces using ICT1DAnalyzer
 
 name: "HTT-VHEE_ICT_Picoscope"
-description: "VHEEICT charge measurement from oscilloscope traces"
+description: "VHEE ICT charge measurement from oscilloscope traces"
 data_format: "volts (V) vs time (s)"
 
 # Data loading configuration
