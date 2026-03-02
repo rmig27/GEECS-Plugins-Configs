@@ -49,6 +49,12 @@ transforms:
   flip_horizontal: false
   flip_vertical: false
 
+analysis:
+  enabled_stats:
+    - image_total
+    - x_CoM
+    - y_CoM
+
 # Camera-specific metadata
 metadata:
   spatial_calibration: 0.000019  # as of 10/1/2025

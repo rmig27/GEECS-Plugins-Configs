@@ -30,10 +30,3 @@ thresholding:
 # Pipeline configuration - empty for ICT (handled by analyzer)
 pipeline:
   steps: []
-
-ict_options:
-  crit_freq: 0.125
-  order: 1
-  dt: 4e-9 
-  calib: 0.2
-

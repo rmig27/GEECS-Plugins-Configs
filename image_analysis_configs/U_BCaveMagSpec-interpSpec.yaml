@@ -22,7 +22,7 @@ background:
 filtering:
   method: "median"         # Options: "none", "gaussian", "median", "bilateral"
   sigma: 2.0                 # Standard deviation for Gaussian filter
-  kernel_size: 51             # Kernel size for median filter (must be odd)
+  kernel_size: 3             # Kernel size for median filter (must be odd)
 
 # Unit conversion: seconds → nanoseconds, volts → millivolts
 x_units: "MeV"
@@ -36,12 +36,13 @@ thresholding:
 
 roi:
   x_min: 60    # 60 MeV
-  x_max: 150   # 150 MeV
+  x_max: 200  # 150 MeV
 
 
-## Pipeline configuration (order of processing steps)
-#pipeline:
-#  steps:
-#    - "background"
-#    - "roi"
-#    - "thresholding"
+# Pipeline configuration (order of processing steps)
+pipeline:
+  steps:
+    - "background"
+    - "roi"
+    - "filtering"
+    - "thresholding"
