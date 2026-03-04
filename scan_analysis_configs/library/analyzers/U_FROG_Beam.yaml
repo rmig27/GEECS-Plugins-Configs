@@ -1,12 +1,12 @@
-id: ExpanderIn1
+id: U_FROG_Beam
 type: array2d
-device_name: UC_ExpanderIn1
-priority: 20
+device_name: U_FROG_Grenouille-Temporal
+priority: 48
 analysis_mode: per_shot          # quotes optional
-flag_save_images: true
+flag_save_images: false
 image_analyzer:
   analyzer_class: image_analysis.offline_analyzers.beam_analyzer.BeamAnalyzer
   kwargs:
-    camera_config_name : "UC_ExpanderIn1"
+    camera_config_name : "U_FROG_Grenouille-Temporal"
 kwargs: {}
 is_active: true

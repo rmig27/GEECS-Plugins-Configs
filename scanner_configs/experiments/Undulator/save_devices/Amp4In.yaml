@@ -1,6 +1,5 @@
 Devices:
-  UC_Amp4_IR_output:
-    add_all_variables: false
+  UC_Amp4_IR_input:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []

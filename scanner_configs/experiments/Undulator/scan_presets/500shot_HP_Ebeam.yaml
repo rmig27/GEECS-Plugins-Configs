@@ -1,0 +1,11 @@
+Devices:
+- BCaveMagSpec-HiRes
+- BCaveMagSpec
+- HP-AuxLaserDiag
+- HP-LaserCams
+- U_BCaveICT
+- HP_Ghost_WFS
+- HP-FocusDiagnostics
+Info: ''
+Num Shots: 500
+Scan Mode: No Scan

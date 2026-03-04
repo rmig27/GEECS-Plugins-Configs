@@ -5,11 +5,15 @@ Devices:
     variable_list: []
 setup_action:
   steps:
+  - action: wait
+    wait: 0.1
   - action: set
-    device: U_PLC
-    value: 'off'
-    variable: DO.Ch8
-  - action: set
-    device: U_PLC
+    device: UC_ALineEbeam1
     value: 'on'
-    variable: DO.Ch18
+    variable: Analysis
+    wait_for_execution: true
+  - action: set
+    device: UC_ALineEbeam1
+    value: 'on'
+    variable: trigger
+    wait_for_execution: true
