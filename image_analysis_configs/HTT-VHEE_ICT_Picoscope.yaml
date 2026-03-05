@@ -2,7 +2,7 @@
 # Configuration for measuring charge from oscilloscope traces using ICT1DAnalyzer
 
 name: "HTT-VHEE_ICT_Picoscope"
-description: "VHEEICT charge measurement from oscilloscope traces"
+description: "VHEE ICT charge measurement from oscilloscope traces"
 data_format: "volts (V) vs time (s)"
 
 # Data loading configuration
@@ -31,8 +31,9 @@ thresholding:
 pipeline:
   steps: []
 
-ict_options:
-  crit_freq: 0.125
-  order: 1
-  dt: 2e-9 #s
-  calib: 0.2 #C/Vs
+# ICT-specific analysis configuration
+analysis:
+  butterworth_order: 1
+  butterworth_crit_f: 0.125
+  calibration_factor: 0.2
+  dt: 2e-9

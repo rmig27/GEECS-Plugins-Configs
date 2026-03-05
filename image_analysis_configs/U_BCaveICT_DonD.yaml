@@ -31,8 +31,9 @@ thresholding:
 pipeline:
   steps: []
 
+# ICT-specific analysis configuration
 analysis:
-  butterworth_crit_f: 0.125
   butterworth_order: 1
-  dt: 4e-9 #s
-  calibration_factor: 0.1 #C/Vs
+  butterworth_crit_f: 0.125
+  calibration_factor: 0.1
+  dt: 4e-9

@@ -32,13 +32,8 @@ pipeline:
   steps: []
 
 # ICT-specific analysis configuration
-ict_analysis:
-  butterworth:
-    order: 1
-    critical_frequency: 0.125
-    filter_type: "low"
-  calibration:
-    calibration_factor: 0.0719  # 0.2 / 2.78
-    detector_type: "undulator_exit"
-  extract_dt_from_metadata: true
-  dt_override: null
+analysis:
+  butterworth_order: 1
+  butterworth_crit_f: 0.125
+  calibration_factor: 0.0719
+  dt: null

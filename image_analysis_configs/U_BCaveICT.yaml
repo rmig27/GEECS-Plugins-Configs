@@ -30,3 +30,10 @@ thresholding:
 # Pipeline configuration - empty for ICT (handled by analyzer)
 pipeline:
   steps: []
+
+# ICT-specific analysis configuration
+analysis:
+  butterworth_order: 1
+  butterworth_crit_f: 0.125
+  calibration_factor: 0.2
+  dt: 4e-9

@@ -14,8 +14,12 @@ data_loading:
 processing_dtype: "float64"  # Use high precision during processing
 storage_dtype: "float32"     # Save with lower precision to reduce file size
 
-ict_options:
+# ICT-specific analysis configuration
+analysis:
   butterworth_order: 2
+  butterworth_crit_f: 0.125
+  calibration_factor: 0.1
+  dt: null
 
 
 ## Background subtraction configuration
