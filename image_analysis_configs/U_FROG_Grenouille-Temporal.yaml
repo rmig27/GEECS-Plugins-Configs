@@ -34,4 +34,4 @@ grenouille_analysis_params:
   N: 256 # acceptable values: 512, 256, 128, 64
   target_error: 0.0001
   max_time_seconds: 3
-  max_iterations: 1000000000
+  max_iterations: 1000000000.0

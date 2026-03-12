@@ -51,3 +51,7 @@ Devices:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []
+  UC_Stretcher:
+    save_nonscalar_data: true
+    synchronous: true
+    variable_list: []

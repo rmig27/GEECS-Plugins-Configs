@@ -18,10 +18,10 @@
 vocs:
   variables:
     # Example: optimize triplet magnet currents
-    U_Hexapod:ypos: [18, 19.5]
-    U_Hexapod:zpos: [-.5, .7]
-    U_Hexapod:vangle: [-.25, .25]
-    U_Hexapod:wangle: [-.5, .0]
+    U_Hexapod:ypos: [8.5, 11.5]
+    U_Hexapod:zpos: [-1.7, 1.3]
+    U_Hexapod:vangle: [-.75, .25]
+    U_Hexapod:wangle: [-1, .0]
 
   objectives:
     f: MINIMIZE  # Minimize the objective function

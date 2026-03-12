@@ -5,7 +5,7 @@ priority: 1
 analysis_mode: per_shot          # quotes optional
 flag_save_images: false
 image_analyzer:
-  analyzer_class: image_analysis.offline_analyzers.standard_1d_analyzer.Standard1DAnalyzer
+  analyzer_class: image_analysis.offline_analyzers.line_analyzer.LineAnalyzer
   kwargs:
     line_config_name : "U_BCaveMagSpec-interpSpec"
 kwargs: {file_tail: ".txt"}

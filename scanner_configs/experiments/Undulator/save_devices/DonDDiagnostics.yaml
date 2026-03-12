@@ -1,8 +1,4 @@
 Devices:
-  UC_DiagnosticsPhosphor:
-    save_nonscalar_data: true
-    synchronous: true
-    variable_list: []
   UC_DonDSampleArea:
     save_nonscalar_data: true
     synchronous: true

@@ -1,18 +1,18 @@
 groups:
   baseline:
-##    - HasoLift
-#    - Amp2Input
-#    - Amp3Input
-#    - Amp4Input
-##    - Amp4Output
-#    - ExpanderIn1
-#    - ExpanderIn1_Pulsed
-#    - GaiaMode
-#    - BcaveMagSpecStitcherSpec
+    - HasoLift
+    - Amp2Input
+    - Amp3Input
+    - Amp4Input
+#    - Amp4Output
+    - ExpanderIn1
+    - ExpanderIn1_Pulsed
+    - GaiaMode
+    - BcaveMagSpecStitcherSpec
     - U_FROG
     - U_FROG_Beam
-#    - OAPin2
-#    - FinalSteeringLeak
+    - OAPin2
+    - FinalSteeringLeak
 #    - 148Spectro
   htu_variational:
 #    - Amp2Input_var
