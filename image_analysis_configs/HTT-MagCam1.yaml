@@ -1,0 +1,85 @@
+# Configuration for "HTT-C44_1_dr_out camera
+
+# Camera identification and properties
+name: "HTT-MagCam1"
+description: "High power mode imager"
+camera_type: "ebeam_profile"
+bit_depth: 16
+
+# Camera identification and properties
+background:
+  enabled: true
+  method: from_file
+  file_path: "/Users/samuelbarber/Desktop/Github_repos/GEECS-Plugins/ImageAnalysis/image_analysis/magspec_code/example_data/raw_data/HTT-C23_1_MagSpec1/background.png"
+  additional_constant: 0.7
+
+# Thresholding configuration - NEW FEATURE
+thresholding:
+  enabled: true
+  method: "constant"  # Use percentage of max value
+  value: 0.0               # 10% of maximum pixel value
+  mode: "to_zero"            # Binary thresholding
+  invert: false             # Don't invert
+
+roi:
+  x_min: 0 # Original left_ROI
+  x_max: 1357  # left_ROI + roi_width (175 + 800)
+  y_min: 1  # Original top_ROI
+  y_max: 600  # top_ROI + roi_height (100 + 800)
+
+# Image filtering configuration
+filtering:
+  gaussian_sigma: null      # No filtering in original
+  median_kernel_size: 5  # No filtering in original
+#
+# Geometric transformations
+transforms:
+  rotation_angle: 0.0       # Original rotate value
+  flip_horizontal: false
+  flip_vertical: false
+
+vignette:
+  enabled: true
+  method: radial_polynomial
+
+  # From LANEX calibration table, set 6:
+  full_width: 1384
+  full_height: 1032
+  vgnt4: -4.0e-13
+  vgnt2: -6.31e-7
+  vgnt0: 1.0
+
+  # From camera saved-image ROI offsets (NOT from LANEX table):
+  x_offset: 0
+  y_offset: 170
+  min_model_value: 1.0e-9
+
+analysis:
+  energy_range: [76.2, 201.3]
+  num_energy_points: 1000
+  calibration:
+    kind: dnn_axis
+    camera_calibration_file: "magspec_code/calibrations/260224DnnVarianCam.txt"
+    trajectory_calibration_file: "magspec_code/calibrations/170925DnnVarianTrj.txt"
+    lanex_calibration_file: "magspec_code/calibrations/250101lanexCalib.txt"
+    camera_number: 1
+    magnetic_field_t: 0.2005
+#
+#analysis:
+#  magspec:
+#    mag_field: "1.0T"
+#    energy_range: [76.2, 201.3]
+#    num_energy_points: 1000
+#    flip_horizontal: false
+#    flip_vertical: false
+#    calibration:
+#      kind: "dnn_axis"
+#      camera_calibration_file: "magspec_code/calibrations/260224DnnVarianCam.txt"
+#      trajectory_calibration_file: "magspec_code/calibrations/170925DnnVarianTrj.txt"
+#      camera_number: 1
+#      magnetic_field_t: 0.2005
+#    charge_calibration:
+#      kind: dnn_lanex
+#      camera_calibration_file: "magspec_code/calibrations/260224DnnVarianCam.txt"
+#      lanex_calibration_file: "magspec_code/calibrations/250101lanexCalib.txt"
+#      camera_number: 1
