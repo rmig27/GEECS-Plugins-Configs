@@ -1,7 +1,7 @@
 # Configuration for "HTT-C44_1_dr_out camera
 
 # Camera identification and properties
-name: "HTT-MagCam1"
+name: "HTT-C23_1_MagSpec1"
 description: "High power mode imager"
 camera_type: "ebeam_profile"
 bit_depth: 16
@@ -10,8 +10,14 @@ bit_depth: 16
 background:
   enabled: true
   method: from_file
-  file_path: "/Users/samuelbarber/Desktop/Github_repos/GEECS-Plugins/ImageAnalysis/image_analysis/magspec_code/example_data/raw_data/HTT-C23_1_MagSpec1/background.png"
-  additional_constant: 0.7
+  file_path: "{scan_dir}/computed_background.npy"
+  constant_level: 50.0  #fallback to this value if file not found
+  dynamic_computation:
+    enabled: true
+    method: percentile_dataset
+    percentile: 15.0
+    auto_save_path: "{scan_dir}/computed_background.npy"
+  additional_constant: .1
 
 # Thresholding configuration - NEW FEATURE
 thresholding:
@@ -55,15 +61,15 @@ vignette:
   min_model_value: 1.0e-9
 
 analysis:
-  energy_range: [76.2, 201.3]
+  energy_range: [16.2, 501.3]
   num_energy_points: 1000
   calibration:
     kind: dnn_axis
-    camera_calibration_file: "magspec_code/calibrations/260224DnnVarianCam.txt"
-    trajectory_calibration_file: "magspec_code/calibrations/170925DnnVarianTrj.txt"
-    lanex_calibration_file: "magspec_code/calibrations/250101lanexCalib.txt"
+    camera_calibration_file: "data/HTT-MagSpce-Calibrations/260224DnnVarianCam.txt"
+    trajectory_calibration_file: "data/HTT-MagSpce-Calibrations/170925DnnVarianTrj.txt"
+    lanex_calibration_file: "data/HTT-MagSpce-Calibrations/250101lanexCalib.txt"
     camera_number: 1
-    magnetic_field_t: 0.2005
+    magnetic_field_t: 0.1964
 #
 #analysis:
 #  magspec:
