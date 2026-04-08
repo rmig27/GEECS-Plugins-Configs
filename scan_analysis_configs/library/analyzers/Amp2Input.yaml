@@ -3,7 +3,7 @@ type: array2d
 device_name: UC_Amp2_IR_Input
 priority: 40
 analysis_mode: per_shot          # quotes optional
-flag_save_images: false
+flag_save_images: true
 image_analyzer:
   analyzer_class: image_analysis.offline_analyzers.beam_analyzer.BeamAnalyzer
   kwargs:

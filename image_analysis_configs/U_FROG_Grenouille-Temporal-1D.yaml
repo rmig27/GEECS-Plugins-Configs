@@ -5,8 +5,8 @@ data_format: "sig (arb) vs time (fs)"
 # Data loading configuration
 data_loading:
   data_type: "tsv"
-  x_column: 3
-  y_column: 5
+  x_column: 0
+  y_column: 4
 
 # Data type settings
 processing_dtype: "float64"
@@ -25,25 +25,25 @@ filtering:
 thresholding:
   method: "none"
 
-#roi:
-#  x_min: -200
-#  x_max: 200
-#
-#interpolation:
-#  enabled: true
-#  x_min: -175
-#  x_max: 175
-#  num_points: 300
-
 roi:
-  x_min: 600
-  x_max: 950
+  x_min: -200
+  x_max: 200
 
 interpolation:
   enabled: true
-  x_min: 650
-  x_max: 900
+  x_min: -175
+  x_max: 175
   num_points: 300
+
+#roi:
+#  x_min: 600
+#  x_max: 950
+#
+#interpolation:
+#  enabled: true
+#  x_min: 650
+#  x_max: 900
+#  num_points: 300
 
 # Pipeline configuration - empty for ICT (handled by analyzer)
 pipeline:

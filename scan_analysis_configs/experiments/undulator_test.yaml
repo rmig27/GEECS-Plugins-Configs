@@ -1,4 +1,4 @@
-experiment: HTT
+experiment: Undulator_test
 description: Standard analysis using library/groups
 version: "1.0"
 include:

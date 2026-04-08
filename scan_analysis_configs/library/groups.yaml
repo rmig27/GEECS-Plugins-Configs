@@ -1,6 +1,6 @@
 groups:
   baseline:
-    - HasoLift
+#    - HasoLift
     - Amp2Input
     - Amp3Input
     - Amp4Input
@@ -13,6 +13,7 @@ groups:
     - U_FROG_Beam
     - OAPin2
     - FinalSteeringLeak
+    - DonDSampleArea
 #    - 148Spectro
   htu_variational:
 #    - Amp2Input_var
@@ -24,5 +25,8 @@ groups:
     - U_FROG_Beam_var
 #    - OAPin2_var
 #    - FinalSteeringLeak_var
+  htu_test:
+#    - BcaveMagSpecStitcherSpec
+    - HTT-Profiler
   VHEE:
     - VHEE_ICT

@@ -8,7 +8,7 @@ description: image of target chamber output port
 background:
   enabled: true
   method: constant
-  constant_level: 0.0
+  constant_level: 1.0
 
 metadata:
   location: "148"
@@ -27,11 +27,11 @@ filtering:
   gaussian_sigma: null
   median_kernel_size: 5
 
-grenouille_analysis_params:
+analysis:
   delt: 0.85
   dellam: -0.085
   lam0: 400.0
   N: 256 # acceptable values: 512, 256, 128, 64
   target_error: 0.0001
-  max_time_seconds: 3
+  max_time_seconds: 5
   max_iterations: 1000000000.0
