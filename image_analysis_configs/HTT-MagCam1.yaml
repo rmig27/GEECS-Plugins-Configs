@@ -9,15 +9,21 @@ bit_depth: 16
 # Camera identification and properties
 background:
   enabled: true
-  method: from_file
-  file_path: "{scan_dir}/computed_background.npy"
-  constant_level: 50.0  #fallback to this value if file not found
-  dynamic_computation:
-    enabled: true
-    method: percentile_dataset
-    percentile: 15.0
-    auto_save_path: "{scan_dir}/computed_background.npy"
-  additional_constant: .1
+  background_scan_number: 3   # whichever scan is your dark/background run
+  method: from_file            # will be set automatically, but harmless to be explicit
+#  enabled: true
+#  method: from_file
+#  file_path: 'Z:\data\Thomson\Y2026\04-Apr\26_0410\scans\Scan003\HTT-C23_1_MagSpec1\Scan003_HTT-C23_1_MagSpec1_004.png'
+#  file_path: "{scan_dir}/computed_background.npy"
+#  constant_level: 50.0  #fallback to this value if file not found
+#  dynamic_computation:
+#    enabled: true
+#    method: percentile_dataset
+#    percentile: 5.0
+#    auto_save_path: "{scan_dir}/computed_background.npy"
+  additional_constant: 1.0
+
+
 
 # Thresholding configuration - NEW FEATURE
 thresholding:
@@ -61,7 +67,7 @@ vignette:
   min_model_value: 1.0e-9
 
 analysis:
-  energy_range: [16.2, 501.3]
+  energy_range: [1.2, 1501.3]
   num_energy_points: 1000
   calibration:
     kind: dnn_axis
@@ -69,4 +75,4 @@ analysis:
     trajectory_calibration_file: "data/HTT-MagSpce-Calibrations/170925DnnVarianTrj.txt"
     lanex_calibration_file: "data/HTT-MagSpce-Calibrations/250101lanexCalib.txt"
     camera_number: 1
-    magnetic_field_t: 0.1964
+    magnetic_field_t: 0.2008
