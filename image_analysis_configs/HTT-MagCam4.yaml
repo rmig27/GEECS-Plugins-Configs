@@ -1,7 +1,7 @@
 # Configuration for "HTT-C44_1_dr_out camera
 
 # Camera identification and properties
-name: "HTT-C23_1_MagSpec1"
+name: "HTT-C23_4_MagSpec4"
 description: "High power mode imager"
 camera_type: "ebeam_profile"
 bit_depth: 16
@@ -10,14 +10,8 @@ bit_depth: 16
 background:
   enabled: true
   method: from_file
-  file_path: "{scan_dir}/computed_background.npy"
-  constant_level: 50.0  #fallback to this value if file not found
-  dynamic_computation:
-    enabled: true
-    method: percentile_dataset
-    percentile: 15.0
-    auto_save_path: "{scan_dir}/computed_background.npy"
-  additional_constant: .1
+  file_path: "/Users/samuelbarber/Desktop/Github_repos/GEECS-Plugins/ImageAnalysis/image_analysis/magspec_code/example_data/raw_data/HTT-C23_2_MagSpec2/background.png"
+  additional_constant: 5.9
 
 # Thresholding configuration - NEW FEATURE
 thresholding:
@@ -28,10 +22,10 @@ thresholding:
   invert: false             # Don't invert
 
 roi:
-  x_min: 0 # Original left_ROI
-  x_max: 1357  # left_ROI + roi_width (175 + 800)
-  y_min: 1  # Original top_ROI
-  y_max: 600  # top_ROI + roi_height (100 + 800)
+  x_min: 25 # Original left_ROI
+  x_max: 1384  # left_ROI + roi_width (175 + 800)
+  y_min: 20  # Original top_ROI
+  y_max: 170  # top_ROI + roi_height (100 + 800)
 
 # Image filtering configuration
 filtering:
@@ -40,7 +34,7 @@ filtering:
 #
 # Geometric transformations
 transforms:
-  rotation_angle: 0.0       # Original rotate value
+  rotation_angle: 0.1      # Original rotate value
   flip_horizontal: false
   flip_vertical: false
 
@@ -48,25 +42,25 @@ vignette:
   enabled: true
   method: radial_polynomial
 
-  # From LANEX calibration table, set 6:
+  # From LANEX calibration table, set 14:
   full_width: 1384
   full_height: 1032
-  vgnt4: -4.0e-13
-  vgnt2: -6.31e-7
+  vgnt4: 1.20e-12
+  vgnt2: -2.0e-6
   vgnt0: 1.0
 
   # From camera saved-image ROI offsets (NOT from LANEX table):
   x_offset: 0
-  y_offset: 170
+  y_offset: 420
   min_model_value: 1.0e-9
 
 analysis:
-  energy_range: [16.2, 501.3]
+  energy_range: [10.2, 501.3]
   num_energy_points: 1000
   calibration:
     kind: dnn_axis
     camera_calibration_file: "data/HTT-MagSpce-Calibrations/260224DnnVarianCam.txt"
     trajectory_calibration_file: "data/HTT-MagSpce-Calibrations/170925DnnVarianTrj.txt"
     lanex_calibration_file: "data/HTT-MagSpce-Calibrations/250101lanexCalib.txt"
-    camera_number: 1
-    magnetic_field_t: 0.1964
+    camera_number: 4
+    magnetic_field_t: 0.2005

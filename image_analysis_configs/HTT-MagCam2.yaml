@@ -64,22 +64,3 @@ analysis:
     lanex_calibration_file: "data/HTT-MagSpce-Calibrations/250101lanexCalib.txt"
     camera_number: 2
     magnetic_field_t: 0.2005
-#
-#analysis:
-#  magspec:
-#    mag_field: "1.0T"
-#    energy_range: [76.2, 201.3]
-#    num_energy_points: 1000
-#    flip_horizontal: false
-#    flip_vertical: false
-#    calibration:
-#      kind: "dnn_axis"
-#      camera_calibration_file: "magspec_code/calibrations/260224DnnVarianCam.txt"
-#      trajectory_calibration_file: "magspec_code/calibrations/170925DnnVarianTrj.txt"
-#      camera_number: 1
-#      magnetic_field_t: 0.2005
-#    charge_calibration:
-#      kind: dnn_lanex
-#      camera_calibration_file: "magspec_code/calibrations/260224DnnVarianCam.txt"
-#      lanex_calibration_file: "magspec_code/calibrations/250101lanexCalib.txt"
-#      camera_number: 1
