@@ -19,7 +19,7 @@ description: B-Cave magnetic spectrometer camera for electron beam profiling
 background:
   enabled: true
   method: constant
-  constant_level: 100.0
+  constant_level: 1.0
 
 crosshair_masking:
   crosshairs: []
@@ -35,8 +35,8 @@ metadata:
   spatial_calibration: 2.217e-05
 
 roi:
-  x_max: 200
-  x_min: 1
+  x_max: 300
+  x_min: 50
   y_max: 180
   y_min: 1
 
@@ -46,3 +46,6 @@ thresholding:
   method: constant
   mode: to_zero
   value: 0.0
+
+analysis:
+  compute_slopes: true

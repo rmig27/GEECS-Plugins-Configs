@@ -8,13 +8,13 @@ description: plasma phase
 background:
   enabled: true
   method: from_file
-  file_path: 'Z:/data/Undulator/Y2026/03-Mar/26_0310/analysis/Scan011/U_HasoLift/Array2dScanAnalyzer/U_HasoLift_average_processed.h5'
+  file_path: 'Z:/data/Undulator/Y2026/04-Apr/26_0414/analysis/Scan008/U_HasoLift/Array2dScanAnalyzer/U_HasoLift_average_processed.h5'
 
 roi:
   x_min: 10
   x_max: 670
-  y_min: 200
-  y_max: 500
+  y_min: 125
+  y_max: 300
 
 filtering:
   gaussian_sigma: null

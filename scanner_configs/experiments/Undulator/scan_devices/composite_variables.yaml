@@ -35,6 +35,15 @@ composite_variables:
       relation: composite_var * -1
       variable: Current
     mode: relative
+  CompressorAndMode:
+    components:
+    - device: U_CompAerotech
+      relation: composite_var
+      variable: Position.Axis1
+    - device: U_ModeImagerESP
+      relation: (composite_var-41000) * 14/1000 - 20
+      variable: Position.Axis 1
+    mode: absolute
   ERROR_Laser_angle_offset_y:
     components:
     - device: U_ESP302_02
@@ -77,7 +86,7 @@ composite_variables:
       relation: composite_var
       variable: Position.Axis 3
     - device: U_ProbeCamStage
-      relation: -2 - (composite_var-5)*2.5
+      relation: -1.5 - (composite_var-5)*2.5
       variable: Position
     mode: absolute
   Laser_angle_offset_x:

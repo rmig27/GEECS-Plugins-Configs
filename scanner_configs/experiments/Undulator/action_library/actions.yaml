@@ -161,7 +161,7 @@ actions:
       action_name: Amp4_DUMP_HP
     - action: set
       device: U_Hexapod
-      value: 18.35
+      value: 17.95
       variable: ypos
     - action: execute
       action_name: Amp4_SEND_HP_TO_TARGET

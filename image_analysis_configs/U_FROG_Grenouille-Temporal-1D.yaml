@@ -6,7 +6,7 @@ data_format: "sig (arb) vs time (fs)"
 data_loading:
   data_type: "tsv"
   x_column: 0
-  y_column: 4
+  y_column: 1
 
 # Data type settings
 processing_dtype: "float64"
