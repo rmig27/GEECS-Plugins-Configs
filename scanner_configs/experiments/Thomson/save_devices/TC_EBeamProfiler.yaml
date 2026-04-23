@@ -1,5 +1,5 @@
 Devices:
-  HTT-D-HP_Mode_Imager:
+  HTT-D-EBeam_Profiler:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []

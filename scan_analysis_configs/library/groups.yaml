@@ -30,3 +30,9 @@ groups:
     - HTT-Profiler
   VHEE:
     - VHEE_ICT
+  HTT_MagSpec:
+    - MagCam1
+    - MagCam2
+    - MagCam3
+    - MagCam4
+    - HTT-MagSpectStitcher

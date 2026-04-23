@@ -1,21 +1,17 @@
 Devices:
-  HTT-D-AMP2_In:
-    add_all_variables: false
+  HTT-D-Compressor_In:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []
-  HTT-D-AMP3_In:
-    add_all_variables: false
+  HTT-D-Telescope_FF:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []
-  HTT-D-AMP4_In:
-    add_all_variables: false
+  HTT-D-Telescope_In:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []
-  HTT-D-AMP4_Out:
-    add_all_variables: false
+  HTT-D-Telescope_Mid:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []

@@ -1,0 +1,7 @@
+Devices:
+  HTT_ProbeLongDelay:
+    add_all_variables: false
+    save_nonscalar_data: false
+    synchronous: false
+    variable_list:
+    - position

@@ -1,4 +1,4 @@
-device: HTT-DG645_6_B
+device: HTT-DG645_Shot_Control
 variables:
   Delay.Ch D:
     'OFF': '0.00'

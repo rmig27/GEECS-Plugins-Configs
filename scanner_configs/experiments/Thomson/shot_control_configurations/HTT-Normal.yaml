@@ -1,9 +1,5 @@
-device: HTT-DG645_6_B
+device: HTT-DG645_Shot_Control
 variables:
-  Delay.Ch D:
-    'OFF': '0.0'
-    SCAN: '0.005'
-    STANDBY: '0.0'
   Trigger.ExecuteSingleShot:
     'OFF': ''
     SCAN: ''

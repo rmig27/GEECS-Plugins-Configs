@@ -9,7 +9,7 @@ bit_depth: 16
 # Camera identification and properties
 background:
   enabled: true
-  background_scan_number: 3   # whichever scan is your dark/background run
+  background_scan_number: 1   # whichever scan is your dark/background run
   method: from_file            # will be set automatically, but harmless to be explicit
 #  enabled: true
 #  method: from_file

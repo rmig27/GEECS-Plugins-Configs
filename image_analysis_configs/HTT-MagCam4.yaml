@@ -10,7 +10,7 @@ bit_depth: 16
 background:
   enabled: true
   method: from_file
-  background_scan_number: 3   # whichever scan is your dark/background run
+  background_scan_number: 1   # whichever scan is your dark/background run
 #  file_path: 'Z:\data\Thomson\Y2026\04-Apr\26_0410\scans\Scan003\HTT-C23_4_MagSpec4\Scan003_HTT-C23_4_MagSpec4_004.png'
 #  file_path: "{scan_dir}/computed_background.npy"
 #  constant_level: 50.0  #fallback to this value if file not found
