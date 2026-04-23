@@ -35,8 +35,8 @@ thresholding:
   clip_below: true           # Clip values below (true) or above (false) threshold
 
 roi:
-  x_min: 5    # 60 MeV
-  x_max: 20  # 150 MeV
+  x_min: 60    # 60 MeV
+  x_max: 160  # 150 MeV
 
 
 # Pipeline configuration (order of processing steps)

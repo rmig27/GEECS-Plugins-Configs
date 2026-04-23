@@ -1,25 +1,20 @@
 Devices:
-  U_ESP_JetXYZ:
+  U_ESP302_01:
+    add_all_variables: false
+    save_nonscalar_data: false
+    synchronous: false
+    variable_list:
+    - Position.Axis 3
+  U_ESP302_02:
     add_all_variables: false
     save_nonscalar_data: false
     synchronous: false
     variable_list:
     - Position.Axis 1
-    - Position.Axis 2
-    - Position.Axis 3
-  U_HasoLift:
-    save_nonscalar_data: true
-    synchronous: true
-    variable_list: []
-  U_ModeImagerESP:
+  U_StretchterXMCC:
     add_all_variables: false
     save_nonscalar_data: false
     synchronous: false
     variable_list:
-    - Position.Axis 3
-  U_ProbeCamStage:
-    add_all_variables: false
-    save_nonscalar_data: false
-    synchronous: false
-    variable_list:
-    - Position
+    - Position.Ch1
+    - Position.Ch2

@@ -3,7 +3,7 @@ type: array1d
 device_name: U_BCaveMagSpec-interpSpec
 priority: 1
 analysis_mode: per_shot          # quotes optional
-flag_save_images: false
+flag_save_images: true
 gdoc_slot: 0        # 0 → row 1 col 0 | 1 → row 1 col 1
                     # 2 → row 2 col 0 | 3 → row 2 col 1
 image_analyzer:

@@ -1,0 +1,14 @@
+Devices:
+- BCaveMagSpec-HiRes
+- BCaveMagSpec
+- HASO_Lift
+- HP-AuxLaserDiag
+- HP-LaserCams
+- HP_Ghost_WFS
+- TargetChamberStages
+- U_BCaveICT
+- vacuum_gauges
+- PointingStabilizationStages
+Info: ''
+Num Shots: 100
+Scan Mode: No Scan
