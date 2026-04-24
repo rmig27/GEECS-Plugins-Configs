@@ -14,5 +14,7 @@ image_analyzer:
       - "HTT-C23_2_MagSpec2-interpSpec"
       - "HTT-C23_3_MagSpec3-interpSpec"
       - "HTT-C23_4_MagSpec4-interpSpec"
+    output_folder: "HTT-C23_MagSpecAnalysis"
+    output_label: "HTT-C23_MagSpecStitched"
 kwargs: {file_tail: ".tsv"}
 is_active: true
