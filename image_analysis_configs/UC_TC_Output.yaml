@@ -8,7 +8,7 @@ description: image of target chamber output port
 background:
   enabled: true
   method: constant
-  constant_level: 100.0
+  constant_level: 0.0
 
 metadata:
   location: "B-cave"
@@ -23,9 +23,9 @@ thresholding:
   mode: "to_zero"            # Binary thresholding
   invert: false             # Don't invert
 
-filtering:
-  gaussian_sigma: null
-  median_kernel_size: 3
+#filtering:
+#  gaussian_sigma: null
+#  median_kernel_size: 3
 
 roi:
   x_max: 350

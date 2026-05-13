@@ -1,7 +1,7 @@
 id: HasoLift
 type: array2d
 device_name: U_HasoLift
-priority: 50
+priority: 10
 analysis_mode: per_shot          # quotes optional
 flag_save_images: true
 image_analyzer:

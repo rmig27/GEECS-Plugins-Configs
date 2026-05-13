@@ -12,6 +12,7 @@ groups:
     - U_FROG_Beam
     - OAPin2
     - FinalSteeringLeak
+    - U_BCaveSpec-beam
 #    - 148Spectro
   HTU_slow_analysis:
     - HasoLift
@@ -39,3 +40,5 @@ groups:
     - HTT-MagSpectStitcher
   HTU_haso_only:
     - HasoLift
+  HTU_opt:
+    - BcaveMagSpecStitcherSpecOpt

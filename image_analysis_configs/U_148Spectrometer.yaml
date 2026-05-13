@@ -1,5 +1,5 @@
 
-name: "U_BCaveICT.yaml"
+name: "U_148Spectrometer"
 description: "spectrometer oscilloscope traces"
 data_format: "intensity (arb) vs wavelength (nm)"
 

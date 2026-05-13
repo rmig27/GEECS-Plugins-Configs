@@ -1,17 +1,17 @@
-name: UC_DiagnosticsPhosphor
-description: image of e-beam in diagnostics phosphor
+name: UC_Phosphor1
+description: ''
 bit_depth: 16
 roi:
   x_min: 0
   x_max: 1200
-  y_min: 5
-  y_max: 950
+  y_min: 4
+  y_max: 960
 background:
   enabled: true
   method: from_file
   file_path: '{scan_dir}\computed_background.npy'
   constant_level: 0.0
-  additional_constant: 30.0
+  additional_constant: 10.0
   dynamic_computation:
     enabled: true
     method: percentile_dataset
@@ -22,18 +22,13 @@ crosshair_masking: null
 circular_mask:
   enabled: true
   center:
-  - 650
-  - 500
-  radius: 300
+  - 700
+  - 475
+  radius: 450
   mask_outside: true
   mask_value: 0.0
 vignette: null
-thresholding:
-  enabled: true
-  method: constant
-  value: 0.0
-  mode: to_zero
-  invert: false
+thresholding: null
 filtering:
   gaussian_sigma: null
   median_kernel_size: 3
@@ -49,11 +44,6 @@ pipeline:
   - background
   - roi
   - circular_mask
-  - thresholding
   - filtering
   - transforms
 analysis: null
-metadata:
-  location: B-cave
-  notes: none
-  spatial_calibration: 2.44e-05

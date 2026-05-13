@@ -1,17 +1,17 @@
 vocs:
   variables:
-    U_S1H:Current: [-4, 4]
+    U_S1V:Current: [2.5, 4.5]
     U_EMQTripletBipolar:Current_Limit.Ch1: [1.2, 1.7]
   objectives: {}
   observables:
-    - x_CoM
+    - y_CoM
 
 evaluator:
   module: geecs_scanner.optimization.evaluators.beam_position_evaluator
   class: BeamPositionEvaluator
 
   kwargs:
-    observable_names: ["x_CoM"]
+    observable_names: ["y_CoM"]
 
     analyzers:
       - device_name: UC_ALineEBeam3
@@ -28,9 +28,9 @@ generator:
 
 xopt_config_overrides:
   multipoint_bax_alignment_l2:
-    control_names: ["U_S1H:Current"]
+    control_names: ["U_S1V:Current"]
     measurement_name: "U_EMQTripletBipolar:Current_Limit.Ch1"
-    observable_names: ["x_CoM"]
+    observable_names: ["y_CoM"]
     probe_nominal: 1.5
     probe_grid_absolute: [-0.2, 0.0, 0.2]
     n_control_mesh: 21

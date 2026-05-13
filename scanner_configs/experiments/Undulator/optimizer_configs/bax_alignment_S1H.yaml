@@ -1,0 +1,40 @@
+vocs:
+  variables:
+    U_S1H:Current: [-4.5, -1.5]
+    U_EMQTripletBipolar:Current_Limit.Ch1: [1.2, 1.7]
+  objectives: {}
+  observables:
+    - x_CoM
+
+evaluator:
+  module: geecs_scanner.optimization.evaluators.beam_position_evaluator
+  class: BeamPositionEvaluator
+
+  kwargs:
+    observable_names: ["x_CoM"]
+
+    analyzers:
+      - device_name: UC_ALineEBeam3
+        analyzer_type: Array2DScanAnalyzer
+        file_tail: .png
+        image_analyzer:
+          module: image_analysis.offline_analyzers.beam_analyzer
+          class: BeamAnalyzer
+          kwargs: {camera_config_name: UC_ALineEBeam3}
+        analysis_mode: per_bin
+
+generator:
+  name: multipoint_bax_alignment_l2
+
+xopt_config_overrides:
+  multipoint_bax_alignment_l2:
+    control_names: ["U_S1H:Current"]
+    measurement_name: "U_EMQTripletBipolar:Current_Limit.Ch1"
+    observable_names: ["x_CoM"]
+    probe_nominal: 1.5
+    probe_grid_absolute: [-0.2, 0.0, 0.2]
+    n_control_mesh: 21
+    mesh_measurement: true
+    n_measurement_mesh: 5
+    n_monte_carlo_samples: 32
+    use_low_noise_prior: false

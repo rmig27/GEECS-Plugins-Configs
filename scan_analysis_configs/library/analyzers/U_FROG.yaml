@@ -1,7 +1,7 @@
 id: U_FROG
 type: array2d
 device_name: U_FROG_Grenouille-Temporal
-priority: 49
+priority: 1
 analysis_mode: per_shot          # quotes optional
 flag_save_images: false
 image_analyzer:

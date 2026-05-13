@@ -38,10 +38,6 @@ Devices:
     save_nonscalar_data: true
     synchronous: true
     variable_list: []
-  UC_GaiaMode:
-    save_nonscalar_data: true
-    synchronous: true
-    variable_list: []
   UC_GhostUpstream:
     add_all_variables: false
     save_nonscalar_data: true

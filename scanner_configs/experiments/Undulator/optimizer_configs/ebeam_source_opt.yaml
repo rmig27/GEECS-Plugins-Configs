@@ -18,10 +18,13 @@
 vocs:
   variables:
     # Example: optimize triplet magnet currents
-    U_Hexapod:ypos: [17, 19]
-#    U_Hexapod:zpos: [-.75, .75]
-#    U_Hexapod:vangle: [-.5, .5]
-#    U_Hexapod:wangle: [-.5, .5]
+    U_HP_Daq:AnalogOutput.Channel 1: [2.2, 4.5]
+    U_ModeImagerESP:Position.Axis 2: [-17.25, -17.0]
+#    U_ESP_JetXYZ:Position.Axis 3: [3, 8]
+#    U_ESP_JetXYZ:Position.Axis 1: [3.5, 6]
+    U_ESP_JetXYZ:Position.Axis 2: [-7.6, -6.5]
+
+
 
   objectives:
     f: MINIMIZE  # Minimize the objective function
@@ -32,8 +35,8 @@ vocs:
 evaluator:
   # Module path to your custom evaluator
   # (Create a subclass of MultiDeviceScanEvaluator)
-  module: geecs_scanner.optimization.evaluators.beam_sum_counts_evaluator
-  class: MaxCountsEvaluator
+  module: geecs_scanner.optimization.evaluators.bcavemagspec_opt
+  class: EBeamSourceOpt
 
   kwargs:
     # Custom evaluator parameters
@@ -42,20 +45,21 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
-      - device_name: UC_TC_Output
-        analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .png  # File extension for data files
+      - device_name: U_BCaveMagSpec
+        data_device_name: U_BCaveMagSpec-interpSpec
+        analyzer_type: Array1DScanAnalyzer  # or Array1DScanAnalyzer
+        file_tail: .txt  # File extension for data files
 
         # ImageAnalyzer configuration
         image_analyzer:
-          module: image_analysis.offline_analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {"camera_config_name":"UC_TC_Output"}
+          module: image_analysis.offline_analyzers.Undulator.BCaveMagSpecStitcherOpt
+          class: BCaveMagOpt
+          kwargs: {"line_config_name":"U_BCaveMagSpec-interpSpec"}
 
         # Analysis mode (per_bin recommended for optimization)
-        analysis_mode: per_bin
+        analysis_mode: per_shot
 
 # Generator: Optimization algorithm
 generator:
-  name: bayes_turbo_standard  # Options: random, cnsga, upper_confidence_bound, etc.
+  name: bayes_default  # Options: random, cnsga, upper_confidence_bound, etc.
 
