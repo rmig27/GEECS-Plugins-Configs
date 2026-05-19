@@ -42,3 +42,5 @@ groups:
     - HasoLift
   HTU_opt:
     - BcaveMagSpecStitcherSpecOpt
+  PW_frog_onl:
+    - PW_FROG

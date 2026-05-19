@@ -1,5 +1,4 @@
-experiment: PW_expt
-description: Standard analysis using library/groups
+experiment: PW_frog_only
 version: '1.0'
 upload_to_scanlog: true
 include:
