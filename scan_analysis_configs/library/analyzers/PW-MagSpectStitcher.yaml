@@ -14,7 +14,6 @@ image_analyzer:
       - "CAM-TEA-MagSpecB-interpSpec"
       - "CAM-TEA-MagSpecC-interpSpec"
       - "CAM-TEA-MagSpecD-interpSpec"
-    output_folder: "PW_MagSpecAnalysis"
-    output_label: "PW_MagSpecStitched"
+    name: PW-MagSpectStitcher
 kwargs: {file_tail: ".txt"}
 is_active: true
