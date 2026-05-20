@@ -14,9 +14,11 @@ groups:
     - FinalSteeringLeak
     - U_BCaveSpec-beam
 #    - 148Spectro
+    - UC_TopView
   HTU_slow_analysis:
-    - HasoLift
+#    - HasoLift
     - U_FROG
+#    - U_FROG_1D_post_temporal
   htu_variational:
 #    - Amp2Input_var
 #    - Amp3Input_var
@@ -44,3 +46,13 @@ groups:
     - BcaveMagSpecStitcherSpecOpt
   PW_frog_onl:
     - PW_FROG
+  Visa:
+    - UC_VisaEBeam2
+    - UC_VisaEBeam3
+    - UC_VisaEBeam4
+    - UC_VisaEBeam5
+    - UC_VisaEBeam6
+    - UC_VisaEBeam7
+    - UC_VisaEBeam8
+    - UC_VisaEBeam1
+    - UC_UndulatorRad2

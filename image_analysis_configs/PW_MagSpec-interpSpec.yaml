@@ -1,5 +1,9 @@
-name: U_FROG_Grenouille-Temporal
-description: BCave ICT charge measurement from oscilloscope traces
+# Example configuration for 1D spectrum/lineout processing
+# This demonstrates the array1d processing module
+
+name: "ANALY-TEA-MagSpecSticher-interpSpec"
+description: "Example configuration for processing 1D spectral data or lineouts"
+data_format: "Charge density vs Energy"
 
 # Data loading configuration
 data_loading:
@@ -18,7 +22,11 @@ background:
 filtering:
   method: "median"         # Options: "none", "gaussian", "median", "bilateral"
   sigma: 2.0                 # Standard deviation for Gaussian filter
-  kernel_size: 1            # Kernel size for median filter (must be odd)
+  kernel_size: 3             # Kernel size for median filter (must be odd)
+
+# Unit conversion: seconds → nanoseconds, volts → millivolts
+x_units: "GeV"
+x_scale_factor: 1  # GeV->MeV conversion factor from raw data
 
 # Thresholding configuration
 thresholding:
@@ -27,20 +35,14 @@ thresholding:
   clip_below: true           # Clip values below (true) or above (false) threshold
 
 roi:
-  x_min: -200.0
-  x_max: 200.0
+  x_min: 100    # 100 MeV
+  x_max: 10000  # 4000 MeV
 
-interpolation:
-  enabled: true
-  num_points: 300
-  x_min: -175.0
-  x_max: 175.0
 
 # Pipeline configuration (order of processing steps)
 pipeline:
   steps:
     - "background"
-    - "interpolation"
     - "roi"
     - "filtering"
     - "thresholding"
