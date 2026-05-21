@@ -46,7 +46,6 @@ groups:
     - BcaveMagSpecStitcherSpecOpt
   PW_frog_onl:
     - PW_FROG
-    - PW-MagSpectStitcher
   Visa:
     - UC_VisaEBeam2
     - UC_VisaEBeam3
