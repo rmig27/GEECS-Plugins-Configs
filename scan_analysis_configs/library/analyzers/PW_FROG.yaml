@@ -1,7 +1,7 @@
 id: PW_FROG
 type: array2d
 device_name: FROG-LB-1-Temporal
-priority: 1
+priority: 20
 analysis_mode: per_shot
 flag_save_images: false
 image_analyzer:

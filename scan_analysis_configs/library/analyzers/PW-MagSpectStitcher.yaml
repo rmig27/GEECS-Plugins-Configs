@@ -2,13 +2,13 @@ id: PW-MagSpectStitcher
 type: array1d
 device_name: CAM-TEA-MagSpecA-interpSpec
 priority: 1
-analysis_mode: per_shot          # quotes optional
-flag_save_images: true
-#gdoc_slot: 0        # 0 → row 1 col 0 | 1 → row 1 col 1
-#                    # 2 → row 2 col 0 | 3 → row 2 col 1
+analysis_mode: per_shot
+flag_save_data: true
 image_analyzer:
   analyzer_class: image_analysis.offline_analyzers.line_stitcher.LineStitcher
+  line_config_name: PW-InterpSpec-stitcher
   kwargs:
+<<<<<<< Updated upstream
     line_config_name : "PW-InterpSpec-stitcher"
     sibling_devices :
       - "CAM-TEA-MagSpecB-interpSpec"
@@ -17,3 +17,15 @@ image_analyzer:
     name: PW-MagSpectStitcher
 kwargs: {file_tail: ".txt"}
 is_active: true
+=======
+    line_config_name: PW-InterpSpec-stitcher
+    sibling_devices:
+    - CAM-TEA-MagSpecB-interpSpec
+    - CAM-TEA-MagSpecC-interpSpec
+    - CAM-TEA-MagSpecD-interpSpec
+    output_folder: PW_MagSpecStitched
+    output_label: PW_MagSpecStitched
+kwargs:
+  file_tail: .txt
+is_active: true
+>>>>>>> Stashed changes
