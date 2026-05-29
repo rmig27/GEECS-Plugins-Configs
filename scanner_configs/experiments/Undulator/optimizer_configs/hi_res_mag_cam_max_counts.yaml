@@ -2,12 +2,12 @@ vocs:
   variables:
 #    U_ESP_JetXYZ:Position.Axis 2: [ -8, -7 ]
 #    JetZ_with_probe:composite_var: [ 3, 7]
-    U_ESP_JetXYZ:Position.Axis 3: [2.,6.0]
-    U_HP_Daq:AnalogOutput.Channel 1: [ 1.5, 2.5]
-    U_ModeImagerESP:Position.Axis 2: [-17.25,-17.0]
-    U_ESP_JetXYZ:Position.Axis 2: [-8.,-6.5]
-    U_CompAerotech:Position.Axis1: [41800,42200]
-    U_1HzShiftedBox:delay.Channel_C: [ .00058, 0.00065 ]
+    U_ESP_JetXYZ:Position.Axis 3: [2., 6.0]
+    U_HP_Daq:AnalogOutput.Channel 1: [1.5, 2.5]
+    U_ModeImagerESP:Position.Axis 2: [-17.25, -17.0]
+    U_ESP_JetXYZ:Position.Axis 2: [-8., -6.5]
+    U_CompAerotech:Position.Axis1: [41800, 42200]
+    U_1HzShiftedBox:delay.Channel_C: [.00058, 0.00065]
 
   objectives:
     f: MINIMIZE
@@ -23,17 +23,7 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
-      - device_name: UC_HiResMagCam
-        analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .png  # File extension for data files
-
-        # ImageAnalyzer configuration
-        image_analyzer:
-          module: image_analysis.analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {"camera_config_name":"UC_HiResMagCam"}
-
-        # Analysis mode (per_bin recommended for optimization)
+      - diagnostic: UC_HiResMagCam
         analysis_mode: per_bin
 generator:
   name: bayes_default

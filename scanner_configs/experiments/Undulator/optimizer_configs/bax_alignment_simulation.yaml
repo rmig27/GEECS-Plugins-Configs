@@ -1,9 +1,15 @@
+# TODO: ``UC_ALineEBeam3`` has no diagnostic YAML under
+# ``scan_analysis_configs/analyzers/HTU/`` (only UC_ALineEBeam2 exists today).
+# This config will fail to load via ``BaseOptimizer.from_config_file``
+# until either (a) a UC_ALineEBeam3 diagnostic is added, or (b) this
+# diagnostic reference is repointed at an existing alignment-beam diagnostic.
+#
 # Example optimization configuration using MultiDeviceScanEvaluator
 vocs:
   variables:
     U_S1V:Current: [-4, 4]   # control
 #    U_S1V:Current: [-1.5, 1.5]5
-    U_EMQTripletBipolar:Current_Limit.Ch1: [ 1.2, 1.7 ]
+    U_EMQTripletBipolar:Current_Limit.Ch1: [1.2, 1.7]
   objectives: {}  # EMPTY - BAX doesn't use objectives!
   observables:
     - x_CoM
@@ -22,19 +28,8 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_ALineEBeam3 camera
-      - device_name: UC_ALineEBeam3
-        analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .png  # File extension for data files
-
-        # ImageAnalyzer configuration
-        image_analyzer:
-          module: image_analysis.analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {"camera_config_name":"UC_ALineEBeam3"}
-
-        # Analysis mode (per_bin recommended for optimization)
+      - diagnostic: UC_ALineEBeam3
         analysis_mode: per_shot
-
 generator:
   name: multipoint_bax_alignment_l2
 

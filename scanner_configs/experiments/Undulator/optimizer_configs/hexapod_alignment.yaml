@@ -42,20 +42,8 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
-      - device_name: UC_TC_Output
-        analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .png  # File extension for data files
-
-        # ImageAnalyzer configuration
-        image_analyzer:
-          module: image_analysis.analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {"camera_config_name":"UC_TC_Output"}
-
-        # Analysis mode (per_bin recommended for optimization)
+      - diagnostic: UC_TC_Output
         analysis_mode: per_bin
-
-# Generator: Optimization algorithm
 generator:
   name: bayes_turbo_standard  # Options: random, cnsga, upper_confidence_bound, etc.
 

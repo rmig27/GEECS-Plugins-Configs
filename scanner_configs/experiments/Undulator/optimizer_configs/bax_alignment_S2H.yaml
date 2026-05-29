@@ -1,3 +1,9 @@
+# TODO: ``UC_ALineEBeam3`` has no diagnostic YAML under
+# ``scan_analysis_configs/analyzers/HTU/`` (only UC_ALineEBeam2 exists today).
+# This config will fail to load via ``BaseOptimizer.from_config_file``
+# until either (a) a UC_ALineEBeam3 diagnostic is added, or (b) this
+# diagnostic reference is repointed at an existing alignment-beam diagnostic.
+#
 vocs:
   variables:
     U_S2H:Current: [-2.0, 2.0]
@@ -14,15 +20,8 @@ evaluator:
     observable_names: ["x_CoM"]
 
     analyzers:
-      - device_name: UC_ALineEBeam3
-        analyzer_type: Array2DScanAnalyzer
-        file_tail: .png
-        image_analyzer:
-          module: image_analysis.analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {camera_config_name: UC_ALineEBeam3}
+      - diagnostic: UC_ALineEBeam3
         analysis_mode: per_bin
-
 generator:
   name: multipoint_bax_alignment_l2
 

@@ -38,34 +38,27 @@ evaluator:
     # Custom evaluator parameters
     calibration: 24.4e-3  # Spatial calibration in mm/pixel
 
-    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
+    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig).
+    # Each analyzer references a unified diagnostic YAML under
+    # scan_analysis_configs/analyzers/<namespace>/<stem>.yaml. Everything
+    # the optimizer needs (device_name, analyzer_type, file_tail,
+    # image_analyzer class, image config) is inherited from there.
+    # analysis_mode is the one override worth twiddling per optimization
+    # run; it defaults to whatever scan.mode the diagnostic declares.
     analyzers:
-      # Single device example: UC_ALineEBeam3 camera
-      - device_name: UC_ALineEBeam3
-        analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .png  # File extension for data files
-
-        # ImageAnalyzer configuration
-        image_analyzer:
-          module: image_analysis.analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {"camera_config_name":"UC_ALineEBeam3"}
-
-        # Analysis mode (per_bin recommended for optimization)
+      # Single device example: UC_ALineEBeam3 camera.
+      # NOTE: UC_ALineEBeam3 currently has no diagnostic YAML under
+      # scan_analysis_configs/analyzers/HTU/. Create that first or
+      # repoint this entry at an existing diagnostic before running.
+      - diagnostic: UC_ALineEBeam3
         analysis_mode: per_bin
 
-      # Multi-device example (commented out):
-      # Add more analyzers to combine data from multiple devices
-      # - device_name: UC_HiResMagCam
-      #   analyzer_type: Array2DScanAnalyzer
-      #   file_tail: .png
-      #   image_analyzer:
-      #     module: image_analysis.analyzers.Undulator.hi_res_mag_cam_analyzer
-      #     class: HiResMagCamAnalyzer
-      #     kwargs:
-      #       camera_name: UC_HiResMagCam
+      # Multi-device example: add another entry to combine data from
+      # multiple devices in one objective. The evaluator's compute_objective
+      # gets scalar_results keyed by each diagnostic's device_name.
+      # - diagnostic: UC_HiResMagCam
+      #   analysis_mode: per_bin
 
-# Generator: Optimization algorithm
 generator:
   name: bayes_default  # Options: random, cnsga, upper_confidence_bound, etc.
 
