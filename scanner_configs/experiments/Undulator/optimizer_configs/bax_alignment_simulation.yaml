@@ -18,7 +18,8 @@ vocs:
 evaluator:
   # Module path to your custom evaluator
   # (Create a subclass of MultiDeviceScanEvaluator)
-  module: geecs_scanner.optimization.evaluators.beam_position_evaluator_simulation
+  module: 
+    geecs_scanner.optimization.evaluators.beam_position_evaluator_simulation
   class: BeamPositionEvaluator
 
   kwargs:
@@ -28,8 +29,7 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_ALineEBeam3 camera
-      - diagnostic: UC_ALineEBeam3
-        analysis_mode: per_shot
+      - UC_ALineEBeam3
 generator:
   name: multipoint_bax_alignment_l2
 

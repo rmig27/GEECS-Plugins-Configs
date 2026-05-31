@@ -20,8 +20,7 @@ evaluator:
     observable_names: ["y_CoM"]
 
     analyzers:
-      - diagnostic: UC_ALineEBeam3
-        analysis_mode: per_bin
+      - UC_ALineEBeam3
 generator:
   name: multipoint_bax_alignment_l2
 

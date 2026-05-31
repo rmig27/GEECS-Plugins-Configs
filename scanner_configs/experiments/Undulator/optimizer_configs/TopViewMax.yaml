@@ -36,11 +36,12 @@ evaluator:
     # Custom evaluator parameters
     calibration: 24.4e-3  # Spatial calibration in mm/pixel
 
-    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
+    # Analyzers: list of diagnostic stems (filename without .yaml under
+    # scan_analysis_configs/analyzers/<namespace>/). All wiring — wrapper
+    # class, image config, file tail, analysis mode — comes from the
+    # diagnostic on disk.
     analyzers:
-      # Single device example: UC_TC_Output camera
-      - diagnostic: UC_TopView
-        analysis_mode: per_bin
+      - UC_TopView
 generator:
   name: bayes_turbo_standard  # Options: random, cnsga, upper_confidence_bound, etc.
 

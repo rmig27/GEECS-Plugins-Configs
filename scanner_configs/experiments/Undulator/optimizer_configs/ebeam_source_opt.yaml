@@ -61,8 +61,7 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
-      - diagnostic: BcaveMagSpecStitcherSpecOpt
-        analysis_mode: per_bin
+      - BcaveMagSpecStitcherSpecOpt
 generator:
   name: bayes_ucb  # Options: random, cnsga, upper_confidence_bound, etc.
 
