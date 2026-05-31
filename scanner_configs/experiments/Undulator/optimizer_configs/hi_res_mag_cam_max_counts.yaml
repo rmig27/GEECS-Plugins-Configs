@@ -23,7 +23,9 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
-      - UC_HiResMagCam
+      - diagnostic: UC_HiResMagCam
+        scan:
+          mode: per_bin
 generator:
   name: bayes_default
 

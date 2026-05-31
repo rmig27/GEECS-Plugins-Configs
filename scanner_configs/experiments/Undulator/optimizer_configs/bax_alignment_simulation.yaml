@@ -29,7 +29,9 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_ALineEBeam3 camera
-      - UC_ALineEBeam3
+      - diagnostic: UC_ALineEBeam3
+        scan:
+          mode: per_shot
 generator:
   name: multipoint_bax_alignment_l2
 

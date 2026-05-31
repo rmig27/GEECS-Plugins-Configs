@@ -38,18 +38,19 @@ evaluator:
     # Custom evaluator parameters
     calibration: 24.4e-3  # Spatial calibration in mm/pixel
 
-    # Analyzers: list of diagnostic stems (filename without .yaml under
-    # scan_analysis_configs/analyzers/<namespace>/). Wrapper class,
-    # image config, file tail, analysis mode, and data folder are all
-    # inherited from the diagnostic. There are no override knobs on the
-    # optimizer side — to change how an analyzer runs in optimization,
-    # edit its diagnostic YAML.
+    # Analyzers: each entry names a diagnostic by stem. Bare strings use
+    # the diagnostic as-is; dict form `{diagnostic: <stem>, <field>: <patch>}`
+    # deep-merges the patch into the diagnostic before validation. Below,
+    # the `scan: {mode: per_bin}` patch flips this diagnostic's analysis
+    # mode for optimization (it ships per_shot for canonical scan analysis).
     analyzers:
       # Single device example: UC_ALineEBeam3 camera.
       # NOTE: UC_ALineEBeam3 currently has no diagnostic YAML under
       # scan_analysis_configs/analyzers/HTU/. Create that first or
       # repoint this entry at an existing diagnostic before running.
-      - UC_ALineEBeam3
+      - diagnostic: UC_ALineEBeam3
+        scan:
+          mode: per_bin
 generator:
   name: bayes_default  # Options: random, cnsga, upper_confidence_bound, etc.
 

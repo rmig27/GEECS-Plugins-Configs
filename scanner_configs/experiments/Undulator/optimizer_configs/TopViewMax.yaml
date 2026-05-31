@@ -36,12 +36,16 @@ evaluator:
     # Custom evaluator parameters
     calibration: 24.4e-3  # Spatial calibration in mm/pixel
 
-    # Analyzers: list of diagnostic stems (filename without .yaml under
-    # scan_analysis_configs/analyzers/<namespace>/). All wiring — wrapper
-    # class, image config, file tail, analysis mode — comes from the
-    # diagnostic on disk.
+    # Analyzers: each entry names a diagnostic by stem (filename without
+    # .yaml under scan_analysis_configs/analyzers/<namespace>/). Bare
+    # strings use the diagnostic as-is; dict form `{diagnostic: <stem>,
+    # <field>: <patch>}` deep-merges the patch into the diagnostic before
+    # validation — used here to flip scan.mode to per_bin for optimization
+    # without forking the diagnostic YAML.
     analyzers:
-      - UC_TopView
+      - diagnostic: UC_TopView
+        scan:
+          mode: per_bin
 generator:
   name: bayes_turbo_standard  # Options: random, cnsga, upper_confidence_bound, etc.
 

@@ -42,7 +42,9 @@ evaluator:
     # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
-      - UC_TC_Output
+      - diagnostic: UC_TC_Output
+        scan:
+          mode: per_bin
 generator:
   name: bayes_turbo_standard  # Options: random, cnsga, upper_confidence_bound, etc.
 
