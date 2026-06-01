@@ -18,9 +18,6 @@ evaluator:
 
   kwargs:
     # Custom evaluator parameters
-    calibration: 24.4e-3  # Spatial calibration in mm/pixel
-
-    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
       - diagnostic: UC_HiResMagCam

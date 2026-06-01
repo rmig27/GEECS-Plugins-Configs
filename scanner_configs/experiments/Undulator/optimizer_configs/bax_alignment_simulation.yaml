@@ -24,9 +24,6 @@ evaluator:
 
   kwargs:
     # Custom evaluator parameters
-    calibration: 1.0  # Spatial calibration in mm/pixel
-
-    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_ALineEBeam3 camera
       - diagnostic: UC_ALineEBeam3
