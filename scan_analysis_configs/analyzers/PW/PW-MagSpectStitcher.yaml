@@ -9,33 +9,26 @@ image_analyzer:
     name: PW-MagSpectStitcher
 image:
   type: line
+  name: PW-MagSpectStitcher
   description: Example configuration for processing 1D spectral data or lineouts
   data_format: Charge density vs Energy
-  data_loading:
-    data_type: tsv
   processing_dtype: float64
   storage_dtype: float32
-  background:
-    method: constant
-    constant_value: 0.0
-  filtering:
-    method: median
-    kernel_size: 3
-  x_units: MeV
-  x_scale_factor: 1
-  thresholding:
-    method: absolute
-    threshold_value: 0.0
-    clip_below: true
-  roi:
-    x_min: 100
-    x_max: 10000
+  data_loading:
+    data_type: tsv
+    trace_index: 0
+    x_trace_index: null
+    delimiter: null
+    x_column: 0
+    y_column: 1
+  roi: null
+  interpolation: null
+  background: null
+  filtering: null
+  thresholding: null
+  analysis: null
   pipeline:
-    steps:
-    - background
-    - roi
-    - filtering
-    - thresholding
+    steps: []
 scan:
   priority: 1
   mode: per_shot
