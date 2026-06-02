@@ -3,7 +3,6 @@
 # Camera identification and properties
 name: "HTT-C_Ghost_Focus"
 description: "Amp table imager for HTT D-line"
-camera_type: "ebeam_profile"
 bit_depth: 16
 
 # Enhanced background computation settings with static/dynamic support
