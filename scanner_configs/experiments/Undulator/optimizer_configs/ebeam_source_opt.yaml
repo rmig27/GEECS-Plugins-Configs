@@ -1,3 +1,19 @@
+# TODO: ``BcaveMagSpecStitcherSpecOpt`` diagnostic's top-level
+# ``name: U_BCaveMagSpec-interpSpec`` is the *data folder*, not the GEECS
+# device. Under the post-PR-E SingleDeviceScanAnalyzerConfig schema,
+# ``device_name`` is derived from the diagnostic's top-level ``name``,
+# so ``to_device_requirement()`` will key on ``U_BCaveMagSpec-interpSpec``
+# rather than the GEECS device ``U_BCaveMagSpec``. Two fixes possible:
+#   1. Update the diagnostic to set ``name: U_BCaveMagSpec`` and
+#      ``scan.device: U_BCaveMagSpec-interpSpec``. This keeps scan-side
+#      behavior identical (the loader already defaults the data folder
+#      to top-level name when scan.device is unset) while giving the
+#      optimizer the right GEECS device name.
+#   2. Add a device_name override field on
+#      ``SingleDeviceScanAnalyzerConfig``. Smaller blast radius but adds
+#      back a knob we just stripped out.
+# Option 1 is the structurally correct fix and is the recommended path.
+#
 # Example optimization configuration using MultiDeviceScanEvaluator
 #
 # This example demonstrates the new simplified pattern for creating
@@ -18,8 +34,8 @@
 vocs:
   variables:
     # Example: optimize triplet magnet currents
-    U_HP_Daq:AnalogOutput.Channel 1: [2.2, 4.5]
-    U_ModeImagerESP:Position.Axis 2: [-17.25, -17.0]
+    U_HP_Daq:AnalogOutput.Channel 1: [2., 3]
+#    U_ModeImagerESP:Position.Axis 2: [-17.2, -16.9]
 #    U_ESP_JetXYZ:Position.Axis 3: [3, 8]
 #    U_ESP_JetXYZ:Position.Axis 1: [3.5, 6]
     U_ESP_JetXYZ:Position.Axis 2: [-7.6, -6.5]
@@ -40,26 +56,11 @@ evaluator:
 
   kwargs:
     # Custom evaluator parameters
-    calibration: 24.4e-3  # Spatial calibration in mm/pixel
-
-    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
     analyzers:
       # Single device example: UC_TC_Output camera
-      - device_name: U_BCaveMagSpec
-        data_device_name: U_BCaveMagSpec-interpSpec
-        analyzer_type: Array1DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .txt  # File extension for data files
-
-        # ImageAnalyzer configuration
-        image_analyzer:
-          module: image_analysis.offline_analyzers.Undulator.BCaveMagSpecStitcherOpt
-          class: BCaveMagOpt
-          kwargs: {"line_config_name":"U_BCaveMagSpec-interpSpec"}
-
-        # Analysis mode (per_bin recommended for optimization)
-        analysis_mode: per_shot
-
-# Generator: Optimization algorithm
+      - diagnostic: BcaveMagSpecStitcherSpecOpt
+        scan:
+          mode: per_bin
 generator:
-  name: bayes_default  # Options: random, cnsga, upper_confidence_bound, etc.
+  name: bayes_ucb  # Options: random, cnsga, upper_confidence_bound, etc.
 

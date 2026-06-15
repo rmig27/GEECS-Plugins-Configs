@@ -1,0 +1,49 @@
+name: UC_VisaEBeam3
+image_analyzer: image_analysis.analyzers.beam_analyzer.BeamAnalyzer
+image:
+  type: camera
+  bit_depth: 16
+  description: e beam profile on visa 3 screen
+  background:
+    method: from_file
+    file_path: '{scan_dir}/computed_background.npy'
+    constant_level: 50.0
+    additional_constant: 2
+  metadata:
+    spatial_calibration: 7.5e-06
+  crosshair_masking:
+    crosshairs:
+    - angle: -3.5
+      center:
+      - 374
+      - 127
+      height: 108
+      thickness: 10
+      width: 108
+    - angle: -3.5
+      center:
+      - 338
+      - 485
+      height: 108
+      thickness: 10
+      width: 108
+  roi:
+    x_max: 493
+    x_min: 160
+    y_max: 473
+    y_min: 140
+  transforms:
+    flip_horizontal: false
+    flip_vertical: false
+    rotation_angle: -3.5
+  pipeline:
+    steps:
+    - background
+    - crosshair_masking
+    - roi
+    - transforms
+scan:
+  priority: 1
+  mode: per_shot
+  save: true
+  gdoc_slot: 0

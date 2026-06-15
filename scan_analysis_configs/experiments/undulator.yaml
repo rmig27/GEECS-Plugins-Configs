@@ -1,6 +1,0 @@
-experiment: Undulator
-description: Standard analysis using library/groups
-version: "1.0"
-include:
-  - group: baseline
-    priority_offset: 0

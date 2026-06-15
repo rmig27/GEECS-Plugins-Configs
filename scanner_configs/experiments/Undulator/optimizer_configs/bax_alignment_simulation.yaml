@@ -1,39 +1,27 @@
-# Example optimization configuration using MultiDeviceScanEvaluator
+# BAX alignment with full hardware control + synthetic centroid.
+#
+# Xopt drives the corrector + quadrupole currents on real hardware via
+# VOCS variables; ``BeamPositionSimulationEvaluator`` reads the resulting
+# setpoints from the s-file and computes a synthetic ``x_CoM`` observable
+# via the parametric ray-tracing model. No camera analyzer required —
+# this lets us exercise the full control loop end-to-end without needing
+# the real beam-position diagnostic working.
 vocs:
   variables:
-    U_S1V:Current: [-4, 4]   # control
-#    U_S1V:Current: [-1.5, 1.5]5
-    U_EMQTripletBipolar:Current_Limit.Ch1: [ 1.2, 1.7 ]
-  objectives: {}  # EMPTY - BAX doesn't use objectives!
+    U_S1V:Current: [-4, 4]                                # control (the BAX "S")
+    U_EMQTripletBipolar:Current_Limit.Ch1: [1.2, 1.7]     # measurement (the BAX "M")
+  objectives: {}                                          # EMPTY - BAX models observables only
   observables:
     - x_CoM
 
-# Evaluator: Specify the evaluator class and configuration
 evaluator:
-  # Module path to your custom evaluator
-  # (Create a subclass of MultiDeviceScanEvaluator)
-  module: geecs_scanner.optimization.evaluators.beam_position_evaluator_simulation
-  class: BeamPositionEvaluator
-
+  module:
+    geecs_scanner.optimization.evaluators.beam_position_evaluator_simulation
+  class: BeamPositionSimulationEvaluator
   kwargs:
-    # Custom evaluator parameters
-    calibration: 1.0  # Spatial calibration in mm/pixel
-
-    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
-    analyzers:
-      # Single device example: UC_ALineEBeam3 camera
-      - device_name: UC_ALineEBeam3
-        analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .png  # File extension for data files
-
-        # ImageAnalyzer configuration
-        image_analyzer:
-          module: image_analysis.offline_analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {"camera_config_name":"UC_ALineEBeam3"}
-
-        # Analysis mode (per_bin recommended for optimization)
-        analysis_mode: per_shot
+    # Defaults assume U_S1H; this scan uses U_S1V, so override.
+    control_variable_name: U_S1V:Current
+    measurement_variable_name: U_EMQTripletBipolar:Current_Limit.Ch1
 
 generator:
   name: multipoint_bax_alignment_l2

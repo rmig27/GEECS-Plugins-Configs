@@ -1,0 +1,40 @@
+name: U_BCaveMagSpec
+image_analyzer: image_analysis.analyzers.beam_analyzer.BeamAnalyzer
+image:
+  type: camera
+  bit_depth: 16
+  description: B-Cave magnetic spectrometer camera for electron beam profiling
+  background:
+    method: constant
+    constant_level: 1.0
+  crosshair_masking:
+    crosshairs: []
+  filtering:
+    gaussian_sigma: null
+    median_kernel_size: null
+  metadata:
+    location: B-cave
+    notes: NA
+    spatial_calibration: 2.217e-05
+  roi:
+    x_max: 300
+    x_min: 50
+    y_max: 180
+    y_min: 1
+  thresholding:
+    invert: false
+    method: constant
+    mode: to_zero
+    value: 0.0
+  analysis:
+    compute_slopes: true
+  pipeline:
+    steps:
+    - background
+    - roi
+    - thresholding
+    - filtering
+scan:
+  priority: 3
+  mode: per_bin
+  save: true

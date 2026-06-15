@@ -38,34 +38,19 @@ evaluator:
     # Custom evaluator parameters
     calibration: 24.4e-3  # Spatial calibration in mm/pixel
 
-    # Analyzer configurations (list of SingleDeviceScanAnalyzerConfig)
+    # Analyzers: each entry names a diagnostic by stem. Bare strings use
+    # the diagnostic as-is; dict form `{diagnostic: <stem>, <field>: <patch>}`
+    # deep-merges the patch into the diagnostic before validation. Below,
+    # the `scan: {mode: per_bin}` patch flips this diagnostic's analysis
+    # mode for optimization (it ships per_shot for canonical scan analysis).
     analyzers:
-      # Single device example: UC_ALineEBeam3 camera
-      - device_name: UC_ALineEBeam3
-        analyzer_type: Array2DScanAnalyzer  # or Array1DScanAnalyzer
-        file_tail: .png  # File extension for data files
-
-        # ImageAnalyzer configuration
-        image_analyzer:
-          module: image_analysis.offline_analyzers.beam_analyzer
-          class: BeamAnalyzer
-          kwargs: {"camera_config_name":"UC_ALineEBeam3"}
-
-        # Analysis mode (per_bin recommended for optimization)
-        analysis_mode: per_bin
-
-      # Multi-device example (commented out):
-      # Add more analyzers to combine data from multiple devices
-      # - device_name: UC_HiResMagCam
-      #   analyzer_type: Array2DScanAnalyzer
-      #   file_tail: .png
-      #   image_analyzer:
-      #     module: image_analysis.offline_analyzers.Undulator.hi_res_mag_cam_analyzer
-      #     class: HiResMagCamAnalyzer
-      #     kwargs:
-      #       camera_name: UC_HiResMagCam
-
-# Generator: Optimization algorithm
+      # Single device example: UC_ALineEBeam3 camera.
+      # NOTE: UC_ALineEBeam3 currently has no diagnostic YAML under
+      # scan_analysis_configs/analyzers/HTU/. Create that first or
+      # repoint this entry at an existing diagnostic before running.
+      - diagnostic: UC_ALineEBeam3
+        scan:
+          mode: per_bin
 generator:
   name: bayes_default  # Options: random, cnsga, upper_confidence_bound, etc.
 
