@@ -12,6 +12,6 @@ single_scan_devices:
   'Probe Delay: Long': HTT_ProbeLongDelay:position
   QAtt-DS: HTT-B-Zaber_Chain-B:Position.Ch3
   QAtt-US: HTT-B-Zaber_Chain-B:Position.Ch2
-  Quad-x: HTT-B-Zaber_Chain-B:Position.Ch4
-  Quad-y: HTT-B-Zaber_Chain-B:Position.Ch6
-  Quad-z: HTT-B-Zaber_Chain-B:Position.Ch5
+  Quad-x: HTT-B-Zaber_Chain-B:Position.Ch3
+  Quad-y: HTT-B-Zaber_Chain-B:Position.Ch5
+  Quad-z: HTT-B-Zaber_Chain-B:Position.Ch4
