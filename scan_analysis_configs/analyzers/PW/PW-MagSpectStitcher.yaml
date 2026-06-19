@@ -9,7 +9,6 @@ image_analyzer:
     name: PW-MagSpectStitcher
 image:
   type: line
-  name: PW-MagSpectStitcher
   description: Example configuration for processing 1D spectral data or lineouts
   data_format: Charge density vs Energy
   processing_dtype: float64
