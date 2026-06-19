@@ -1,16 +1,19 @@
 device: HTT-DG645_Shot_Control
 variables:
   Delay.Ch D:
+    ARMED: '0.005'
     'OFF': '0.00'
     SCAN: '0.005'
     SINGLESHOT: ''
     STANDBY: '0.00'
   Trigger.ExecuteSingleShot:
+    ARMED: ''
     'OFF': ''
     SCAN: ''
     SINGLESHOT: 'on'
     STANDBY: ''
   Trigger.Source:
+    ARMED: Single shot
     'OFF': Single shot
     SCAN: Internal
     STANDBY: External rising edges

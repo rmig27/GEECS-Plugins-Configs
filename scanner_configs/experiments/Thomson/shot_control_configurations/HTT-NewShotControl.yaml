@@ -1,11 +1,13 @@
 device: HTT-DG645_Shot_Control
 variables:
   Trigger.ExecuteSingleShot:
+    ARMED: ''
     'OFF': ''
     SCAN: ''
     SINGLESHOT: 'on'
     STANDBY: ''
   Trigger.Source:
+    ARMED: Single shot external rising edges
     'OFF': Single shot external rising edges
     SCAN: External rising edges
     STANDBY: External rising edges
