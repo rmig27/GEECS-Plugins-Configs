@@ -6,18 +6,24 @@ image:
   description: ASSERT test bench optimisation camera
   background:
     method: constant
-    constant_level: 90.0
+    constant_level: 20.0
   metadata:
     location: L cave
     notes: none
     spatial_calibration: 1
   thresholding:
     method: constant
-    value: 0.0
+    value: 0.3
     mode: to_zero
     invert: false
+  roi:
+    x_min: 500
+    x_max: 650
+    y_min: 425
+    y_max: 575
   pipeline:
     steps:
+    - roi
     - background
     - thresholding
 scan:

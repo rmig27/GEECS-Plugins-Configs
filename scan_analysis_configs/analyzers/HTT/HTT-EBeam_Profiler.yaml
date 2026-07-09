@@ -6,7 +6,7 @@ image:
   description: ASSERT test bench optimisation camera
   background:
     method: constant
-    constant_level: 90.0
+    constant_level: 5
   metadata:
     location: L cave
     notes: none
