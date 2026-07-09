@@ -1,7 +1,8 @@
 Devices:
   HTT-B-Zaber_Chain-B:
-    save_nonscalar_data: true
-    synchronous: true
+    add_all_variables: false
+    save_nonscalar_data: false
+    synchronous: false
     variable_list:
     - Position.Ch1
     - Position.Ch2
@@ -9,3 +10,4 @@ Devices:
     - Position.Ch4
     - Position.Ch5
     - Position.Ch6
+ 
