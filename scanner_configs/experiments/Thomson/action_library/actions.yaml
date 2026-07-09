@@ -1,4 +1,6 @@
 actions:
+  ASSERT-LensStage:
+    steps: []
   Quad-In_Long0:
     steps:
     - action: set
